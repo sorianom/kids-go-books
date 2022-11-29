@@ -1,0 +1,128 @@
+\documentclass[a4paper,12pt]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.callouts}
+\usepackage{igo}
+
+\setlength{\fboxrule}{2pt}
+\newcommand{\rectangle}{\fboxsep25pt\fbox{\rule{0pt}{0pt}\rule{0pt}{10pt}}}
+
+
+\newcommand{\problem}[7]{
+\begin{center}
+  #1
+
+  \bigskip
+  
+\cleargoban  
+\white{#2}
+\black{#3}
+\largegoban
+\gobansize{9}
+\showgoban[a1,i9]
+
+\bigskip
+
+#4
+\end{center}
+
+\ifnum#5=0
+\begin{tikzpicture}[remember picture, overlay]
+  \draw (0,5) node (penguin) {\includegraphics[width=2cm]{#6}};
+  \draw (1.5,7) node[ellipse callout,draw,font=\Large,callout absolute pointer={(0.4,6)}] {#7};
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[remember picture, overlay]
+  \draw (15,5) node (penguin) {\includegraphics[width=2cm]{#6}};
+  \draw (13.5,7) node[ellipse callout,draw,font=\Large,callout absolute pointer={(14.6,6)}] {#7};
+\end{tikzpicture}
+\fi
+}
+
+\begin{document}
+\Huge
+
+\begin{center}
+  Draw stone to play.
+
+  \vspace{5cm}
+
+  \cleargoban  
+  \white{f5}
+  \black{f4,g5,e5}
+  \largegoban
+  \gobansize{9}
+  \showgoban[a1,i9]
+
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw (4.5,5) node {\includegraphics[width=7cm]{imgs/drawingHand.png}};
+  \end{tikzpicture}
+\end{center}
+
+\newpage
+
+\problem{Black to play. Capture.}{d4}{e4,c4,d5}{How many stones did you capture? \rectangle}{0}{imgs/penguin1.png}{You can do it!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{f2,g3,e3}{f3}{How many stones did you capture? \rectangle}{1}{imgs/penguin2.png}{Nice work!}
+
+\problem{Black to play. Capture.}{c7}{c6,b7,c8}{How many stones did you capture? \rectangle}{0}{imgs/penguin3.png}{Nice!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{h9,j8,h7}{h8}{How many stones did you capture? \rectangle}{1}{imgs/penguin4.png}{Get it!}
+
+\problem{Black to play. Capture.}{e9}{d9,e8}{How many stones did you capture? \rectangle}{0}{imgs/penguin5.png}{Watch out!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{h2,j1}{h1}{How many stones did you capture? \rectangle}{1}{imgs/penguin6.png}{Only 1 stone!}
+
+\problem{Black to play. Capture.}{j5}{h5,j4}{How many stones did you capture? \rectangle}{0}{imgs/penguin7.png}{You can do it!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{b4,a5}{a4}{How many stones did you capture? \rectangle}{1}{imgs/penguin8.png}{Get it! Get it!}
+
+\problem{Black to play. Capture.}{a1}{a2}{How many stones did you capture? \rectangle}{0}{imgs/penguin9.png}{Only 1 stone!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{h9}{j9}{How many stones did you capture? \rectangle}{1}{imgs/penguin10.png}{Get it! Get it!}
+
+\problem{Black to play. Capture.}{a9}{b9}{How many stones did you capture? \rectangle}{0}{imgs/penguin11.png}{Only 1 stone!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{j2}{j1}{How many stones did you capture? \rectangle}{1}{imgs/penguin12.png}{Get it! Get it!}
+
+\problem{Black to play. Defend.}{e4,e6,d5}{e5}{How many stones did you save? \rectangle}{0}{imgs/penguin3.png}{Be careful!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Defend.}{f3}{f2,f4,g3}{How many stones did you save? \rectangle}{1}{imgs/penguin3.png}{Save it! Save it!}
+
+\problem{Black to play. Defend.}{a2,b1,c2}{b2}{How many stones did you save? \rectangle}{0}{imgs/penguin3.png}{Quick!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Defend.}{h7}{h8,j7,g7}{How many stones did you save? \rectangle}{1}{imgs/penguin3.png}{Save your stone!}
+
+\problem{Black to play. Defend.}{c2,b1}{c1,d2}{How many stones did you save? \rectangle}{0}{imgs/penguin3.png}{Watch out!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Defend.}{g9,f8}{g8,h9}{How many stones did you save? \rectangle}{1}{imgs/penguin3.png}{Save your stone!}
+
+\problem{Black to play. Defend.}{b5,a6}{a5,b4}{How many stones did you save? \rectangle}{0}{imgs/penguin3.png}{Watch out!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Defend.}{j5,h6}{h5,j4}{How many stones did you save? \rectangle}{1}{imgs/penguin3.png}{Save your stone!}
+
+
+\end{document}
