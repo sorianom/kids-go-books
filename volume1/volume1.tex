@@ -9,6 +9,12 @@
 \usepackage{igo}
 \usepackage{soul}
 \usepackage{contour}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+%\usepackage{tgbonum}
+
+%\usepackage{svg}
 
 \setlength{\fboxrule}{2pt}
 \newcommand{\rectangle}{\fboxsep25pt\fbox{\rule{0pt}{0pt}\rule{0pt}{10pt}}}
@@ -47,10 +53,17 @@
   \draw (-1.5+2.5,7+0.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-0.4+2.5,6)},align=center] {#7};
 \end{tikzpicture}
 \else
-\begin{tikzpicture}[remember picture, overlay]
-  \draw (15-2.0,5+0.5) node (penguin) {\includegraphics[width=3.5cm]{#6}};
-  \draw (16.5-2.0,7+0.5+0.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(15.4-2.0,6+0.5)},align=center] {#7};
-\end{tikzpicture}
+  \ifnum#5=1 
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw (15-2.0,5+0.5) node (penguin) {\includegraphics[width=3.5cm]{#6}};
+    \draw (16.5-2.0,7+0.5+0.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(15.4-2.0,6+0.5)},align=center] {#7};
+  \end{tikzpicture}
+  \else
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw (15-3.0,5+0.5) node (penguin) {\includegraphics[width=5.0cm]{#6}};
+    \draw (16.5-2.0,7+0.5+0.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(15.4-2.0,6+0.5)},align=center] {#7};
+  \end{tikzpicture}  
+\fi
 \fi
 %% \begin{tikzpicture}[remember picture, overlay]
 %%   \draw (4.3,3.1) node[font=\small] {a};
@@ -77,24 +90,28 @@
 }
 
 \begin{document}
-\Huge
+{\Huge
 
 \begin{center}
 \begin{tikzpicture}[overlay, remember picture]
-
+  
 \draw (0,-12) node[opacity=0.9] {\includegraphics[width=1.85\columnwidth]{imgs/goBoard.png}};
   
 \draw (0,-12) node  {\includegraphics[width=1.5\columnwidth]{imgs/penguins.png}};
 
+\draw (0,-1) node[align=center,draw,thick,rounded corners,fill=gray,opacity=0.6,inner sep=0.75cm] {\fontfamily{qcr}\selectfont\fontsize{55}{50}\selectfont \contour{orange}{My First Book of}\\\fontfamily{qcr}\selectfont\fontsize{55}{50}\selectfont \contour{orange}{Go Exercises}};
+
+\draw (0,-25) node[align=center,draw,thick,rounded corners,fill=gray,opacity=0.6,inner sep=0.5cm,text=orange, text opacity=1]{\fontfamily{qcr}\selectfont\fontsize{30}{35}\selectfont \contour{black}{LEANDRO SORIANO MARCOLINO}};
+
 \end{tikzpicture}
 
-\vspace{-2.5cm}
+%\vspace{-2.5cm}
 
-{{\fontsize{100}{110}\selectfont \contour{red}{My First Book of}\\
-  \contour{red}{Go Exercises}}}
+%{{\fontsize{100}{110}\selectfont \contour{red}{My First Book of}\\
+%  \contour{red}{Go Exercises}}}
   
-\vspace{20cm}
-       {{\fontsize{40}{50}\selectfont \contour{white}{By: Daddy}}}
+%\vspace{20cm}
+%       {{\fontsize{35}{45}\selectfont \contour{white}{By: Leandro Soriano Marcolino}}}
        \thispagestyle{empty}
 \end{center}
 
@@ -102,7 +119,41 @@
 \thispagestyle{empty}
 \
 \newpage
+\thispagestyle{empty}
+\vspace{5cm}
+\
 
+\begin{center}
+{\fontsize{100}{110}\selectfont{My First Book of\\
+    Go Exercises}}
+
+\vspace{2.5cm}
+
+Leandro Soriano Marcolino\\
+www.leandromarcolino.com.br
+
+\vspace{3.5cm}
+
+Lancaster Go Club
+
+\vspace{4.5cm}
+
+\href{https://buymeacoffee.com/leandromarcolino}{\includegraphics[width=5.0cm]{imgs/bmc-button.png}}\\
+\vspace{-0.5cm}
+  {\normalsize\url{https://buymeacoffee.com/leandromarcolino}}
+
+\includegraphics[width=0.5cm]{imgs/cc-logo.pdf}
+\includegraphics[width=0.5cm]{imgs/cc-by.pdf}
+\includegraphics[width=0.5cm]{imgs/cc-nc.pdf}
+\includegraphics[width=0.5cm]{imgs/cc-sa.pdf}\\
+{\normalsize{This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/}\\
+  English Version 1.0 -- October 2024}
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+\
+\newpage
 \begin{center}
   Draw stone to play.
 
@@ -117,6 +168,8 @@
 
   \begin{tikzpicture}[remember picture, overlay]
     \draw (4.5,5) node {\includegraphics[width=7cm]{imgs/drawingHand.png}};
+    \draw (-6, 3) node {\includegraphics[width=3.5cm]{imgs/penguin1.png}};
+    \draw (-3.5,5.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,4.0)},align=center] {Only 1 stone\\in all problems!};
   \end{tikzpicture}
 \end{center}
 
@@ -137,6 +190,8 @@
 
 \newpage
 
+% Simple atari exercises, capture
+
 \problem{Black to play. Capture.}{d4}{e4,c4,d5}{How many stones did you capture? \rectangle}{0}{imgs/penguin1.png}{You can\\do it!}
 
 \noindent\rule{\textwidth}{2pt}
@@ -148,6 +203,8 @@
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Capture.}{h9,j8,h7}{h8}{How many stones did you capture? \rectangle}{1}{imgs/penguin4.png}{Get it!}
+
+% Atari in the borders, capture
 
 \problem{Black to play. Capture.}{e9}{d9,e8}{How many stones did you capture? \rectangle}{0}{imgs/penguin5.png}{Watch out!}
 
@@ -161,6 +218,8 @@
 
 \problem{White to play. Capture.}{b4,a5}{a4}{How many stones did you capture? \rectangle}{1}{imgs/penguin8.png}{Get it!\\Get it!}
 
+% Atari in the corners, capture
+
 \problem{Black to play. Capture.}{a1}{a2}{How many stones did you capture? \rectangle}{0}{imgs/penguin9.png}{Pay attention!}
 
 \noindent\rule{\textwidth}{2pt}
@@ -172,6 +231,8 @@
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Capture.}{j2}{j1}{How many stones did you capture? \rectangle}{1}{imgs/penguin12.png}{Take it there!}
+
+% Simple atari, defend.
 
 \problem{Black to play. Defend.}{e4,e6,d5}{e5}{How many stones did you save? \rectangle}{0}{imgs/penguin13.png}{Be careful!}
 
@@ -185,6 +246,8 @@
 
 \problem{White to play. Defend.}{h7}{h8,j7,g7}{How many stones did you save? \rectangle}{1}{imgs/penguin16.png}{Save your\\stone!}
 
+% Atari in the border, defend.
+
 \problem{Black to play. Defend.}{c2,b1}{c1,d2}{How many stones did you save? \rectangle}{0}{imgs/penguin17.png}{Watch out!}
 
 \noindent\rule{\textwidth}{2pt}
@@ -196,6 +259,8 @@
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Defend.}{j5,h6}{h5,j4}{How many stones did you save? \rectangle}{1}{imgs/penguin20.png}{Save it!}
+
+% Atari in the corner, defend.
 
 \problem{Black to play. Defend.}{b9}{a9,b8}{How many stones did you save? \rectangle}{0}{imgs/penguin21.png}{Don't lose it!}
 
@@ -209,11 +274,15 @@
 
 \problem{White to play. Defend.}{j9,h8}{j8}{How many stones did you save? \rectangle}{1}{imgs/penguin24.png}{Defend! Defend!}
 
+% Atari, capture multiple stones.
+
 \problem{Black to play. Capture.}{d4,d5,d6}{d3,c4,c5,c6,e4,e5,e6}{How many stones did you capture? \rectangle}{0}{imgs/penguin25.png}{So many!}
 
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Capture.}{e2,d3,d4,d5,e6,f6,f3,f4}{e3,e4,e5,f5}{How many stones did you capture? \rectangle}{1}{imgs/penguin26.png}{Wow! Divine!}
+
+% Atari, multiple stones, border.
 
 \problem{Black to play. Capture.}{e1,e2,e3,e4}{d1,d2,d3,d4,f1,f2,f3,f4}{How many stones did you capture? \rectangle}{0}{imgs/penguin27.png}{Play it!}
 
@@ -221,6 +290,7 @@
 
 \problem{White to play. Capture.}{a2,b3,b4,b5,b6,b7,b8}{a3,a4,a5,a6,a7,a8,a9}{How many stones did you capture? \rectangle}{1}{imgs/penguin28.png}{Get them all!}
 
+% Atari, multiple stones, first introduction to net tesuji.
 
 \problem{Black to play. Capture.}{e5,e6}{d5,d6,e4,f4,f6,e7}{How many stones did you capture? \rectangle}{0}{imgs/penguin29.png}{You can!}
 
@@ -228,11 +298,15 @@
 
 \problem{White to play. Capture.}{d5,d6,e4,f4,f6,e7}{e5,e6,f5}{How many stones did you capture? \rectangle}{1}{imgs/penguin30.png}{Nuts!}
 
+% Atari towards the border, first introduction to ladders.
+
 \problem{Black to play. Capture.}{f3,f4,g4,g5,h5,h6,j6}{e3,e4,f2,g3,f5,h4,g6,j5,h7}{How many stones did you capture? \rectangle}{0}{imgs/penguin31.png}{Wow!}
 
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Capture.}{a7,a8,b9,c8,b6,d7,c5,e6,d4,f5,e3,g4,f2,h3,g1,j2}{b8,b7,c7,c6,d6,d5,e5,e4,f4,f3,g3,g2,h2,h1}{How many stones did you capture? \rectangle}{1}{imgs/penguin32.png}{Make them\\disappear!}
+
+% Capture, last liberty inside group.
 
 \problem{Black to play. Capture.}{d3,d4,d5,c3,c5,b3,b4,b5}{a3,a4,a5,e3,e4,e5,b6,c6,d6,b2,c2,d2}{How many stones did you capture? \rectangle}{0}{imgs/penguin33.png}{Watch out!}
 
@@ -240,72 +314,79 @@
 
 \problem{White to play. Capture.}{b2,a3,b4,c1,c5,d2,d4,e3}{b3,c4,d3,c2}{How many stones did you capture? \rectangle}{1}{imgs/penguin34.png}{You can play!}
 
+% Capture, last liberty inside group, border and corner.
+
 \problem{Black to play. Capture.}{a2,b2,b1}{a3,b3,c2,c1}{How many stones did you capture? \rectangle}{0}{imgs/penguin35.png}{Beautiful!}
 
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Capture.}{b9,b8,c7,d7,e7,f8,f9}{c9,c8,d8,e8,e9}{How many stones did you capture? \rectangle}{1}{imgs/penguin36.png}{Right there!}
 
+% Capture atari, first introduction to Ko.
+
 \problem{Black to play. Capture.}{c4,b3,c2,d3}{d4,e3,d2}{How many stones did you capture? \rectangle}{0}{imgs/penguin37.png}{A gift stone!}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{White to play. Capture.}{f6,g7,g5}{h7,j6,h5,g6}{How many stones did you capture? \rectangle}{1}{imgs/penguin38.png}{Love it!}
+\problem{White to play. Capture.}{c4,b3,c2}{d4,e3,d2,c3}{How many stones did you capture? \rectangle}{1}{imgs/penguin37.png}{Wow! It\\comes back!}
+
+\problem{White to play. Capture.}{f6,g7,g5}{h7,j6,h5,g6}{How many stones did you capture? \rectangle}{0}{imgs/penguin38.png}{Love it!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{Black to play. Capture.}{f6,g7,g5,h6}{h7,j6,h5}{How many stones did you capture? \rectangle}{1}{imgs/penguin38.png}{There you go\\again!}
 
 \problem{Black to play. Capture.}{d9,c8,b9}{e9,d8}{How many stones did you capture? \rectangle}{0}{imgs/penguin39.png}{No way!}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{White to play. Capture.}{j5,h4}{j4,h3,j2}{How many stones did you capture? \rectangle}{1}{imgs/penguin40.png}{A birthday gift!}
+\problem{White to play. Capture.}{c8,b9}{e9,d8,c9}{How many stones did you capture? \rectangle}{1}{imgs/penguin39.png}{What!?\\No way!}
 
-\problem{Black to play. Capture.}{j1,h2,j3}{h1}{How many stones did you capture? \rectangle}{0}{imgs/penguin42.png}{Right there!}
+\problem{White to play. Capture.}{j5,h4}{j4,h3,j2}{How many stones did you capture? \rectangle}{1}{imgs/penguin40.png}{A birthday gift!}
 
 \noindent\rule{\textwidth}{2pt}
 
+\problem{Black to play. Capture.}{j5,h4,j3}{h3,j2}{How many stones did you capture? \rectangle}{0}{imgs/penguin40.png}{Another gift!?}
+
+\problem{Black to play. Capture.}{j1,h2,j3}{h1}{How many stones did you capture? \rectangle}{0}{imgs/penguin42-small.png}{Right there!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{h2,j3}{h1,j2}{How many stones did you capture? \rectangle}{1}{imgs/penguin42-small.png}{There, again!?}
+
 \problem{White to play. Capture.}{b9}{a9,b8,a7}{How many stones did you capture? \rectangle}{1}{imgs/penguin41.png}{You can do it!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{Black to play. Capture.}{b9,a8}{b8,a7}{How many stones did you capture? \rectangle}{0}{imgs/penguin41.png}{You can do it,\\again!}
+
+% Big group of stones, diagonal not needed.
 
 \problem{Black to play. Capture.}{c1,d1,e1,f1,g1,d2,e2,f2,e3}{b1,c2,d3,f3,g2,h1}{How many stones did you capture? \rectangle}{0}{imgs/penguin43.png}{Wow!}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{White to play. Capture.}{b1,c2,d3,f3,g2,h1,e4}{c1,d1,e1,f1,g1,d2,f2,e3}{How many stones did you capture? \rectangle}{1}{imgs/penguin44.png}{Get them all!}
+% Playing in the inside liberty.
+
+\problem{White to play. Capture.}{b1,c2,d3,f3,g2,h1,e4}{c1,d1,e1,f1,g1,d2,f2,e3}{How many stones did you capture? \rectangle}{3}{imgs/penguin45.png}{Get them all!}
+
+% Connecting to the outside.
 
 \problem{Black to play. Defend.}{b1,c2,d3,f3,g2,h1}{c1,d1,e1,f1,g1,d2,e2,f2,e3,e5}{How many stones did you save? \rectangle}{0}{imgs/penguin1.png}{Watch out!}
 
 \noindent\rule{\textwidth}{2pt}
 
+% Defending by capturing a stone, cannot simply extend from the atari.
+
 \problem{White to play. Defend.}{c1,d1,e1,f1,g1,d2,f2,e3,c3}{b1,c2,d3,f3,g2,h1,e4,d4}{How many stones did you save? \rectangle}{1}{imgs/penguin2.png}{Attack is\\the best defence!}
+
+% Find an atari when there are several stones in the board.
 
 \problem{Black to play. Capture.}{c3,c7,e5,c5,d4,b6,b7}{g6,g3,e7,d6,d5,c6,b5}{How many stones did you capture? \rectangle}{0}{imgs/penguin3.png}{Pay attention!}
 
 \noindent\rule{\textwidth}{2pt}
 
 \problem{White to play. Capture.}{c7,c3,g5,f4,e4,f3,e2}{e5,g3,g7,f6,e3,d4,f2,g2}{How many stones did you capture? \rectangle}{1}{imgs/penguin4.png}{You can do it!}
-
-\problem{Black to play. Capture.}{a2,b2,c2,d2,d1,b1,f8,g8,h8,j8,f9,g9,h9}{a3,b3,c3,d3,e2,e1,e8,e9,f7,g7,h7,j7}{How many stones did you capture? \rectangle}{0}{imgs/penguin5.png}{Which group?}
-
-\noindent\rule{\textwidth}{2pt}
-
-\problem{White to play. Capture.}{a4,b4,c4,d3,d2,d1,f9,f8,f7,g6,h6,j6}{a2,b1,b3,c2,a3,c3,c1,g9,h9,j9,g8,j8,g7,h7,j7}{How many stones did you capture? \rectangle}{1}{imgs/penguin6.png}{Get the\\correct one!}
-
-\problem{Black to play. Capture biggest group.}{c3,c4,c5,g1,g2,g3,g4}{b3,b4,b5,c2,c6,d3,d4,f1,f2,f3,f4,h1,h2,h3,h4}{How many stones did you capture? \rectangle}{0}{imgs/penguin7.png}{Which is bigger?}
-
-\noindent\rule{\textwidth}{2pt}
-
-\problem{White to play. Capture biggest group.}{b1,a2,a3,a4,b5,c5,c1,e2,e3,e4,d1,d5,j1,h2,h3,h4,h5,h6,h7,h8}{b2,b3,b4,c4,c2,d2,d3,d4,j2,j3,j4,j5,j6,j7,j8}{How many stones did you capture? \rectangle}{1}{imgs/penguin8.png}{So many stones!}
-
-
-\problem{Black to play. Defend biggest group.}{a3,a4,a5,b6,c6,d6,e6,f4,f3,b2,c2,d2,e2,c4,h1,h2,h3,h4,h6,h7,h8,h9,g8,f8,e8,d8,d9,f9}{b3,b4,b5,c3,c5,d3,d5,e3,e4,e5,g5,j1,j2,j3,j4,j5,j6,j7,j8,j9,g6,f7,e7,d7,c7,b7,a7,b9,a8,c8}{How many stones did you save? \rectangle}{0}{imgs/penguin9.png}{Which one\\to defend?}
-
-\noindent\rule{\textwidth}{2pt}
-
-\problem{White to play. Defend biggest group.}{a8,b8,c8,d8,d9,b9,f8,a2,b2,b1,d2,f5,f6}{a7,b7,c7,d7,e9,a3,b3,c1,e5,e6,f4,g5,g6}{How many stones did you save? \rectangle}{1}{imgs/penguin10.png}{Save it!\\Save it!}
-
-\problem{Black to play. Capture biggest group.}{a3,b3,b4,b5,b6,b7,a7,a5,h9,h8,h7,j7,a1,b1,h1,h2,h3,j1,j3}{c2,a2,b2,c3,c4,c5,c6,c7,b8,a8,g9,g8,g7,h6,j6,j8,g1,g2,g3,g4,h4,j4}{How many stones did you capture? \rectangle}{0}{imgs/penguin11.png}{Which one\\to capture?}
-
-\noindent\rule{\textwidth}{2pt}
-
-\problem{White to play. Capture biggest group.}{a4,b4,c4,d3,d2,d1,d4,f1,f2,f3,f4,a8,b8,c8,h7,d6}{a2,b1,b3,c2,a3,c3,c1,e1,e2,e3,e4,g1,g2,g3,g4,a9,b9,c9,e9,g7,h6,h8}{How many stones did you capture? \rectangle}{1}{imgs/penguin12.png}{Pay attention!\\Which one?}
 
 \newpage
 % Capture Go
@@ -421,7 +502,185 @@
   \end{tikzpicture}
 \end{enumerate}
 
+\begin{tikzpicture}[overlay, remember picture]
+  \draw (13,0) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin1.png}};
+  \draw (15.25,2.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(13,0.5)},align=center,inner sep=0] {Print this page\\again to\\play more games!};
+\end{tikzpicture}
+
 \newpage
+
+% Introduction to 2 eyes. One group can be captured, but the other one cannot.
+
+\problem{Black to play. Capture.}{a2,b2,c2,d2,d1,b1,f8,g8,h8,j8,f9,g9,h9}{a3,b3,c3,d3,e2,e1,e8,e9,f7,g7,h7,j7}{How many stones did you capture? \rectangle}{0}{imgs/penguin5.png}{Which group?}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{a4,b4,c4,d3,d2,d1,f9,f8,f7,g6,h6,j6}{a2,b1,b3,c2,a3,c3,c1,g9,h9,j9,g8,j8,g7,h7,j7}{How many stones did you capture? \rectangle}{1}{imgs/penguin6.png}{Get the\\correct one!}
+
+% A gentle introduction to counting. Although here we are not considering territory, but just which group has more stones to be captured.
+
+\problem{Black to play. Capture biggest group.}{c3,c4,c5,g1,g2,g3,g4}{b3,b4,b5,c2,c6,d3,d4,f1,f2,f3,f4,h1,h2,h3,h4}{How many stones did you capture? \rectangle}{0}{imgs/penguin7.png}{Which is bigger?}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture biggest group.}{b1,a2,a3,a4,b5,c5,c1,e2,e3,e4,d1,d5,j1,h2,h3,h4,h5,h6,h7,h8}{b2,b3,b4,c4,c2,d2,d3,d4,j2,j3,j4,j5,j6,j7,j8}{How many stones did you capture? \rectangle}{1}{imgs/penguin8.png}{So many stones!}
+
+% Also counting, but find the best group to defend. These also practice the notion of having two eyes.
+
+\problem{Black to play. Defend biggest group.}{a3,a4,a5,b6,c6,d6,e6,f4,f3,b2,c2,d2,e2,c4,h1,h2,h3,h4,h6,h7,h8,h9,g8,f8,e8,d8,d9,f9}{b3,b4,b5,c3,c5,d3,d5,e3,e4,e5,g5,j1,j2,j3,j4,j5,j6,j7,j8,j9,g6,f7,e7,d7,c7,b7,a7,b9,a8,c8}{How many stones did you save? \rectangle}{0}{imgs/penguin9.png}{Which one\\to defend?}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Defend biggest group.}{a8,b8,c8,d8,d9,b9,f8,a2,b2,b1,d2,f5,f6}{a7,b7,c7,d7,e9,a3,b3,c1,e5,e6,f4,g5,g6}{How many stones did you save? \rectangle}{1}{imgs/penguin10.png}{Save it!\\Save it!}
+
+% Counting again, in the attack point of view. However, some groups have two eyes and cannot be captured.
+
+% In a real game some groups are already dead and do not need to be explicitly captured. The point for now is to practice the notion that these groups can be removed, and to count.
+
+\problem{Black to play. Capture biggest group.}{a3,b3,b4,b5,b6,b7,a7,a5,h9,h8,h7,j7,a1,b1,h1,h2,h3,j1,j3}{c2,a2,b2,c3,c4,c5,c6,c7,b8,a8,g9,g8,g7,h6,j6,j8,g1,g2,g3,g4,h4,j4}{How many stones did you capture? \rectangle}{0}{imgs/penguin11.png}{Which one\\to capture?}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture biggest group.}{a4,b4,c4,d3,d2,d1,d4,f1,f2,f3,f4,a8,b8,c8,h7,d6}{a2,b1,b3,c2,a3,c3,c1,e1,e2,e3,e4,g1,g2,g3,g4,a9,b9,c9,e9,g7,h6,h8}{How many stones did you capture? \rectangle}{1}{imgs/penguin12.png}{Pay attention!\\Which one?}
+
+% Some exercises where some groups have two eyes and cannot be captured.
+
+\problem{Black to play. Capture.}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9}{a1,a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{How many stones did you capture? \rectangle}{0}{imgs/penguin13.png}{So many groups!}
+
+\noindent\rule{\textwidth}{2pt}
+
+% Groups can be captured even if we give the opponent one more move.
+
+\problem{Black to play. Capture.}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9,a2}{a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{How many stones did you capture? \rectangle}{1}{imgs/penguin13.png}{White captured\\a stone!?}
+
+
+\problem{White to play. Capture.}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,b9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9}{How many stones did you capture? \rectangle}{0}{imgs/penguin14.png}{Hmm, which one?}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Capture.}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9,a9}{How many stones did you capture? \rectangle}{1}{imgs/penguin14.png}{Black captured\\a stone!?}
+
+\problem{Black to play. Defend your group.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{How many stones did you defend? \rectangle}{1}{imgs/penguin15.png}{Make it invincible!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Kill 3 groups.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{How many stones will be captured? \rectangle}{0}{imgs/penguin15.png}{Oh! It won't be\\removed right away.}
+
+
+The Stone in the Middle Problem
+
+\vspace{1.5cm}
+
+\cleargoban
+\white{c1,c2,d2,e2,f2,g2,g1}
+\black{e1,b1,b2,b3,c3,d3,e3,f3,g3,h3,h2,h1}
+\largegoban
+\gobansize{9}
+\showgoban[a1,j5]
+
+\vspace{2cm}
+
+\white[1]{f1}
+\showgoban[a1,j5]
+
+\vspace{2cm}
+
+\black[2]{d1}
+\showgoban[a1,j5]
+
+\vspace{2cm}
+
+\cleargoban
+%\white{c1,c2,d2,e2,f2,g2,g1}
+\black{e1,b1,b2,b3,c3,d3,e3,f3,g3,h3,h2,h1,d1}
+\largegoban
+\gobansize{9}
+\showgoban[a1,j5]
+
+\begin{tikzpicture}[remember picture,overlay]
+  \draw (10,20) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+  \draw (10+3.0,20+3) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,20+1)},align=center] {White cannot capture\\the stone in the middle!};
+
+  \draw (10,14) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+  \draw (10+3.0,14+2.5) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,14+1)},align=center] {If White tries...};
+
+  \draw (10,8) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+  \draw (10+3.0,8+2.5) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,8+1)},align=center] {Black replies...};
+
+  \draw (10,2) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+  \draw (10+3.0,2+2.5) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,2+1)},align=center] {AND GETS\\EVERYTHING!};
+\end{tikzpicture}
+
+\cleargoban
+\white{c1,c2,d2,e2,f2,g2,g1}
+\black{e1,b1,b2,b3,c3,d3,e3,f3,g3,h3,h2,h1}
+\largegoban
+\gobansize{9}
+\showgoban[a1,j4]
+
+\vspace{1.25cm}
+
+\black[1]{d1}
+\showgoban[a1,j4]
+
+\vspace{1.25cm}
+
+\white[2]{f1}
+\clear{d1,e1}
+\showgoban[a1,j4]
+
+\vspace{1.25cm}
+
+\cleargobansymbols
+\black[3]{d1}
+\showgoban[a1,j4]
+
+\vspace{1.25cm}
+
+\white[4]{e1}
+\clear{d1}
+\showgoban[a1,j4]
+
+\vspace{1.25cm}
+
+\cleargoban
+\black{b1,b2,b3,c3,d3,e3,f3,g3,h3,h2,h1}
+\black[5]{d1}
+\showgoban[a1,j4]
+
+\vspace{-1.0cm}
+
+\begin{tikzpicture}[overlay, remember picture]
+  \draw (10,23) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+  \draw (10+4.0,23+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,23)},align=center] {But Black can\\capture everything!};
+
+  \draw (10,18.5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+  \draw (10+4.0,18.5+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,18.5)},align=center] {Black threatens...};
+
+  \draw (10,14) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+  \draw (10+4.0,14+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,14)},align=center] {White captures.};
+
+  \draw (10,9.5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+  \draw (10+4.0,9.5+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,9.5)},align=center] {Black threatens\\again...};
+
+  \draw (10,5.0) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+  \draw (10+4.0,5.0+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,5.0)},align=center] {White captures.};
+
+  \draw (10,0.5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+  \draw (10+4.0,0.5+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,0.5)},align=center] {AND BLACK GETS\\EVERYTHING!!!};
+\end{tikzpicture}
+
+\problem{Black to play. Kill 1 group.}{a2,a3,b3,c2,c3,c1,h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{How many stones will be captured? \rectangle}{0}{imgs/penguin18.png}{Stone in the\\middle!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{White to play. Defend your group.}{a2,a3,b3,c2,c3,c1,h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{How many stones did you save? \rectangle}{1}{imgs/penguin19.png}{Wow!}
+
+\problem{White to play. Kill 2 groups.}{c1,c2,c3,d3,e3,f4,g3,h3,j1,j2,j3,g4,f5,f6,f7,g8,h9,j9,g7,g9,f8,a5,b5,c5,d6,d7,d8,d9,c4}{d1,d2,e2,f2,f3,g2,h2,h1,g5,h5,h4,j4,g6,g7,h7,h8,j8,j6,b9,c9,c8,c7,a6,b6,c6,a8,a4,b4,b3,b2,b1,a1}{How many stones will be captured? \rectangle}{0}{imgs/penguin20.png}{Stone in the\\middle!}
+
+\noindent\rule{\textwidth}{2pt}
+
+\problem{Black to play. Defend 1 group.}{c1,c2,c3,d3,e3,f4,g3,h3,j1,j2,j3,g4,f5,f6,f7,g8,h9,j9,g7,g9,f8,a5,b5,c5,d6,d7,d8,d9,c4}{d1,d2,e2,f2,f3,g2,h2,h1,g5,h5,h4,j4,g6,g7,h7,h8,j8,b9,c9,c8,c7,a6,b6,c6,a8,a4,b4,b3,b2,b1,a1,f1}{How many stones did you save? \rectangle}{1}{imgs/penguin21.png}{Stone in the\\middle!}
 
 \begin{center}
   Count Territory
@@ -861,7 +1120,7 @@
 
   So White has \ul{$9$} $+$ \ul{$6.5$} $=$ \ul{$15.5$} points.
 
-  Black still wins.}
+  \ul{Black} still wins.}
 
   \begin{tikzpicture}[overlay, remember picture]
     \draw (-5-0.2,5+2) node {\includegraphics[width=4cm]{imgs/penguin32.png}};
@@ -924,6 +1183,143 @@
     \draw (6.5+1.5,7.5-5.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.4+1.5,6-5.5)},align=center] {OH!!!};
   \end{tikzpicture}
   
+% TODO: Add 2 exercises with komi and captures.
+\newpage
+
+Count Score
+
+\cleargoban
+\largegoban
+\gobansize{9}
+\black{e5,f3,c7,d7,e8,e6,b6,c8,c5,d2,b4,a3,a4,g5,h4,e3,d5,h3,j2,h2,f6,b9,b8,f4,e1,d3}
+\white{d6,g7,c6,e7,f8,f7,d8,e9,c3,c2,b3,a2,b1,h5,h6,d4,j4,j3,j5,g6,c9,d9,e4,d1,c1,c4}
+\clear{e8} % black
+\clear{c6,d6} % white
+\showgoban[a1,i9]
+
+ \begin{tikzpicture}[remember picture, overlay]
+    \draw (6,2) node[font=\normalsize] {Black captures: \whitestone \whitestone};
+    \draw (6,7) node[font=\normalsize] {White captures: \blackstone};
+ \end{tikzpicture}
+
+ \vspace{-0.5cm}
+ {
+   \Large White has \smallrectangle $-$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
+
+   \vspace{0.5cm}
+
+   Black has \smallrectangle $-$ \smallrectangle $=$ \smallrectangle points.
+
+   \vspace{0.4cm}
+
+   \rule{60pt}{2pt} wins.
+ }
+
+ \begin{tikzpicture}[remember picture, overlay]
+   \draw (-2.5,5.3) node[font=\small] {Territory};
+   \draw (-0.6,5.3) node[font=\small] {Captures};
+   \draw (1.3, 5.3) node[font=\small] {Komi};
+
+   \draw (-1.6,3.5) node[font=\small] {Territory};
+   \draw (0.3,3.5) node[font=\small] {Captures};
+ \end{tikzpicture}
+
+   \begin{tikzpicture}[overlay, remember picture]
+    \draw (-5,5+3) node {\includegraphics[width=3cm]{imgs/penguin1.png}};
+    \draw (-6.5,7.5+3) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+3)},align=center] {Don't get\\confused!};
+  \end{tikzpicture}
+ 
+\vspace{-2.5cm}
+  
+  \noindent\rule{\textwidth}{2pt}
+
+Count Score
+
+\cleargoban
+\largegoban
+\gobansize{9}
+\black{f6,c7,c3,c4,d5,e6,f2,e3,d2,c2,f7,e8,d9,d8,c1,d6}
+\white{d4,g3,g7,g6,f5,e4,e2,d3,f3,e1,f8,g8,e9,f9,d1,e5}
+\clear{e3} %black
+\showgoban[a1,i9]
+
+ \begin{tikzpicture}[remember picture, overlay]
+    \draw (5.8,5) node[font=\normalsize] {Black captures:};
+    \draw (6,7) node[font=\normalsize] {White captures: \blackstone};
+ \end{tikzpicture}
+
+   \begin{tikzpicture}[overlay, remember picture]
+    \draw (5-1,5-4) node {\includegraphics[width=3cm]{imgs/penguin32.png}};
+    \draw (7.5,7.5-4) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.4,6-4.5)},align=center,inner sep=0pt] {This black stone\\can't escape.\\It is dead.\\It adds 1 capture\\for white.};
+    \draw[->,ultra thick] (3.5,1.25) -- (1.1,3.0);
+  \end{tikzpicture}
+
+\vspace{-1.75cm}
+   
+   {
+        \hspace{-5cm}{\Large White has \smallrectangle $-$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
+
+   \vspace{0.5cm}
+
+   \hspace{-5cm}Black has \smallrectangle $-$ \smallrectangle $=$ \smallrectangle points.
+
+   \vspace{0.4cm}
+
+   \hspace{-5cm}\rule{60pt}{2pt} wins.
+   }}
+ \begin{tikzpicture}[remember picture, overlay]
+   \draw (-2.5-2,4.2) node[font=\small] {Territory};
+   \draw (-0.6-2,4.2) node[font=\small] {Captures};
+   \draw (1.3-2, 4.2) node[font=\small] {Komi};
+
+   \draw (-1.6-2,2.4) node[font=\small] {Territory};
+   \draw (0.3-2,2.4) node[font=\small] {Captures};
+ \end{tikzpicture}        
+\end{center}
+} % Very ugly, but this closes the \Huge
+
+\newpage
+
+\section*{To parents and educators}
+
+This book has a series of exercises to learn fundamental concepts of the Go game. It starts with basic captures across the board, but it also gives a first intuition towards important concepts such as ladders, nets, eyes, kos, and counting. The exercises should be straight-forwards if you have Go knowledge, but a solution sheet is provided as a separate document.
+
+It is possible to find basic Go problems on-line. However, usually many parents want to limit the time kids spend in front of a screen. Hence, my intention with this book was to give kids an opportunity to practice Go (and Math) in a more classical ``paper-and-pencil'' setting. Therefore, the original intention is for the book to be printed, to allow the kids to draw in the pages. However, of course, playing it with a pdf editor (e.g., in a tablet) is also possible.
+
+\begin{wrapfigure}[15]{r}{0.35\columnwidth}
+  \includegraphics[width=0.35\columnwidth]{imgs/captureGo.jpg}\\
+  \textbf{Figure: A Capture Go game in a laminated paper that evolved into a drawing.}
+\end{wrapfigure}
+
+You will find in the middle of the book a ``Capture Go'' board. Capture Go is a great introduction to Go, and it can be entirely played by drawing stones. I would recommend printing and laminating a 9x9 Go Board with white background, and playing Capture Go by drawing stones over it using white board markers. The stones can be erased afterwards with a wipe, allowing many games to be played by drawing. In that way kids can draw funny faces in the stones, balloons with dialogues, etc, allowing them to play Go and express their creativity and imagination at the same time. After the game is over, most often the board also evolves into a full drawing. That will make it really fun for them! You can find a plain 9x9 Go board to be printed at \url{http://micans.org/goboards/}
+
+\section*{Credits}
+Most images come from Open Clipart (\url{https://openclipart.org}), and are Public Domain:
+
+\vspace{0.25cm}
+
+\noindent\hspace{-0.5cm}\begin{minipage}{10cm}
+\begin{itemize}
+\item Drawing hand: By j4p4n (\url{https://openclipart.org/detail/321385/doodling-hand}).
+\item Confused penguin: By zafx (\url{https://openclipart.org/detail/169173/basetuxg2v12}).
+\item Other penguins: By Moini (e.g., \url{https://openclipart.org/detail/174879/wild-penguin}).
+\end{itemize}
+\end{minipage}
+
+\vspace{0.25cm}
+
+Go Board image in the cover is a screenshot of the ``Sabaki'' application \url{https://github.com/SabakiHQ/Sabaki}. The game shown is the 6th European Pro Qualification, final match, Lukáš Podpěra vs. Stanisław Frejlak, 2021.
+
+This book was done in \LaTeX, using several packages, including \emph{Igo} for the Go diagrams, and \emph{TikZ} for the page layout.
+\section*{Distribution}
+
+This book is freely available under the Creative Commons BY-NC\_SA 4.0 license. Hence, feel free to distribute it to friends and family.
+
+If you like this book and would like to show appreciation, you can buy me a coffee at \url{https://buymeacoffee.com/leandromarcolino}
+
+\begin{center}
+  \href{https://buymeacoffee.com/leandromarcolino}{\includegraphics[width=5.0cm]{imgs/bmc-button.png}}\\
+  \url{https://buymeacoffee.com/leandromarcolino}
 \end{center}
 
 \newpage
@@ -949,5 +1345,5 @@
 %%        {{\fontsize{40}{50}\selectfont \contour{white}{By: Daddy}}}
 %%        \thispagestyle{empty}
 %% \end{center}
-
+\end{center}
 \end{document}

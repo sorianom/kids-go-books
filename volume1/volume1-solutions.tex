@@ -1,0 +1,408 @@
+\documentclass[a4paper,12pt]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.callouts,decorations.pathreplacing,calligraphy}
+\usepackage{pgffor}
+\usepackage{igo}
+\usepackage{soul}
+\usepackage{contour}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{multicol}
+%\usepackage{svg}
+\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{1cm}
+\def\columnseprulecolor{\color{orange}}
+
+
+\setlength{\fboxrule}{2pt}
+%\newcommand{\rectangle}{\fboxsep5pt\fbox{\rule{0pt}{0pt}\rule{0pt}{10pt}}}
+\newcommand{\rectangle}{}
+\newcommand{\smallrectangle}{\fboxsep10pt\fbox{\rule{10pt}{0pt}\rule{0pt}{10pt}}\hspace{5pt}}
+
+\newcommand{\problem}[7]{
+  #1
+
+  \medskip
+  
+\cleargoban  
+\white{#2}
+\black{#3}
+\white[1]{#5}
+\black[1]{#6}
+\gobansize{9}
+\showgoban[a1,i9]\\
+#4 #7
+
+\bigskip
+}
+
+\begin{document}
+\begin{center}
+  {\Large
+  My First Book of Go Exercises\\
+  Solution Sheet}\\
+  Leandro Soriano Marcolino
+\end{center}
+\begin{multicols}{3}
+% Simple atari exercises, capture
+
+\problem{Black to play. Capture.}{d4}{e4,c4,d5}{How many stones did you capture? \rectangle}{ }{d3}{1}
+
+\problem{White to play. Capture.}{f2,g3,e3}{f3}{How many stones did you capture? \rectangle}{f4}{ }{1}
+
+\problem{Black to play. Capture.}{c7}{c6,b7,c8}{How many stones did you capture? \rectangle}{ }{d7}{1}
+
+\problem{White to play. Capture.}{h9,j8,h7}{h8}{How many stones did you capture? \rectangle}{g8}{ }{1}
+
+\columnbreak
+% Atari in the borders, capture
+
+\problem{Black to play. Capture.}{e9}{d9,e8}{How many stones did you capture? \rectangle}{ }{f9}{1}
+
+\problem{White to play. Capture.}{h2,j1}{h1}{How many stones did you capture? \rectangle}{g1}{ }{1}
+
+\problem{Black to play. Capture.}{j5}{h5,j4}{How many stones did you capture? \rectangle}{ }{j6}{1}
+
+\problem{White to play. Capture.}{b4,a5}{a4}{How many stones did you capture? \rectangle}{a3}{ }{1}
+
+\columnbreak
+
+% Atari in the corners, capture
+
+\problem{Black to play. Capture.}{a1}{a2}{How many stones did you capture? \rectangle}{ }{b1}{1}
+
+\problem{White to play. Capture.}{h9}{j9}{How many stones did you capture? \rectangle}{j8}{ }{1}
+
+\problem{Black to play. Capture.}{a9}{b9}{How many stones did you capture? \rectangle}{ }{a8}{1}
+
+\problem{White to play. Capture.}{j2}{j1}{How many stones did you capture? \rectangle}{h1}{ }{1}
+
+\columnbreak
+
+% Simple atari, defend.
+
+\problem{Black to play. Defend.}{e4,e6,d5}{e5}{How many stones did you save? \rectangle}{ }{f5}{1}
+
+\problem{White to play. Defend.}{f3}{f2,f4,g3}{How many stones did you save? \rectangle}{e3}{ }{1}
+
+\problem{Black to play. Defend.}{a2,b1,c2}{b2}{How many stones did you save? \rectangle}{ }{b3}{1}
+
+\problem{White to play. Defend.}{h7}{h8,j7,g7}{How many stones did you save? \rectangle}{h6}{ }{1}
+
+\columnbreak
+
+% Atari in the border, defend.
+
+\problem{Black to play. Defend.}{c2,b1}{c1,d2}{How many stones did you save? \rectangle}{ }{d1}{1}
+
+
+\problem{White to play. Defend.}{g9,f8}{g8,h9}{How many stones did you save? \rectangle}{f9}{ }{1}
+
+\problem{Black to play. Defend.}{b5,a6}{a5,b4}{How many stones did you save? \rectangle}{ }{a4}{1}
+
+\problem{White to play. Defend.}{j5,h6}{h5,j4}{How many stones did you save? \rectangle}{j6}{ }{1}
+
+\columnbreak
+
+% Atari in the corner, defend.
+
+\problem{Black to play. Defend.}{b9}{a9,b8}{How many stones did you save? \rectangle}{ }{a8}{1}
+
+\ul{Or}
+
+\bigskip
+
+\problem{Black to play. Defend.}{b9}{a9,b8}{How many stones did you save? \rectangle}{ }{c9}{1}
+
+\problem{White to play. Defend.}{j1,h2}{h1}{How many stones did you save? \rectangle}{j2}{ }{1}
+
+\ul{Or}
+
+\bigskip
+
+\problem{White to play. Defend.}{j1,h2}{h1}{How many stones did you save? \rectangle}{g1}{ }{1}
+
+\columnbreak
+
+\problem{Black to play. Defend.}{a2}{a1,b2}{How many stones did you save? \rectangle}{ }{b1}{1}
+
+\bigskip
+
+\ul{Or}
+
+\bigskip
+
+\problem{Black to play. Defend.}{a2}{a1,b2}{How many stones did you save? \rectangle}{ }{a3}{1}
+
+\problem{White to play. Defend.}{j9,h8}{j8}{How many stones did you save? \rectangle}{h9}{ }{1}
+
+\bigskip
+
+\ul{Or}
+
+\bigskip
+
+\problem{White to play. Defend.}{j9,h8}{j8}{How many stones did you save? \rectangle}{j7}{ }{1}
+
+\columnbreak
+
+% Atari, capture multiple stones.
+
+\problem{Black to play. Capture.}{d4,d5,d6}{d3,c4,c5,c6,e4,e5,e6}{How many stones did you capture? \rectangle}{ }{d7}{3}
+
+\problem{White to play. Capture.}{e2,d3,d4,d5,e6,f6,f3,f4}{e3,e4,e5,f5}{How many stones did you capture? \rectangle}{g5}{ }{4}
+
+% Atari, multiple stones, border.
+
+\problem{Black to play. Capture.}{e1,e2,e3,e4}{d1,d2,d3,d4,f1,f2,f3,f4}{How many stones did you capture? \rectangle}{ }{e5}{4}
+
+\problem{White to play. Capture.}{a2,b3,b4,b5,b6,b7,b8}{a3,a4,a5,a6,a7,a8,a9}{How many stones did you capture? \rectangle}{b9}{ }{7}
+
+\columnbreak
+
+% Atari, multiple stones, first introduction to net tesuji.
+
+\problem{Black to play. Capture.}{e5,e6}{d5,d6,e4,f4,f6,e7}{How many stones did you capture? \rectangle}{ }{f5}{2}
+
+\problem{White to play. Capture.}{d5,d6,e4,f4,f6,e7}{e5,e6,f5}{How many stones did you capture? \rectangle}{g5}{ }{3}
+
+% Atari towards the border, first introduction to ladders.
+
+\problem{Black to play. Capture.}{f3,f4,g4,g5,h5,h6,j6}{e3,e4,f2,g3,f5,h4,g6,j5,h7}{How many stones did you capture? \rectangle}{ }{j7}{7}
+
+\problem{White to play. Capture.}{a7,a8,b9,c8,b6,d7,c5,e6,d4,f5,e3,g4,f2,h3,g1,j2}{b8,b7,c7,c6,d6,d5,e5,e4,f4,f3,g3,g2,h2,h1}{How many stones did you capture? \rectangle}{j1}{ }{14}
+
+\columnbreak
+
+% Capture, last liberty inside group.
+
+\problem{Black to play. Capture.}{d3,d4,d5,c3,c5,b3,b4,b5}{a3,a4,a5,e3,e4,e5,b6,c6,d6,b2,c2,d2}{How many stones did you capture? \rectangle}{ }{c4}{8}
+
+\problem{White to play. Capture.}{b2,a3,b4,c1,c5,d2,d4,e3}{b3,c4,d3,c2}{How many stones did you capture? \rectangle}{c3}{ }{4}
+
+% Capture, last liberty inside group, border and corner.
+
+\problem{Black to play. Capture.}{a2,b2,b1}{a3,b3,c2,c1}{How many stones did you capture? \rectangle}{ }{a1}{3}
+
+\problem{White to play. Capture.}{b9,b8,c7,d7,e7,f8,f9}{c9,c8,d8,e8,e9}{How many stones did you capture? \rectangle}{d9}{ }{5}
+
+\columnbreak
+
+% Capture atari, first introduction to Ko.
+
+\problem{Black to play. Capture.}{c4,b3,c2,d3}{d4,e3,d2}{How many stones did you capture? \rectangle}{ }{c3}{1}
+
+\problem{White to play. Capture.}{c4,b3,c2}{d4,e3,d2,c3}{How many stones did you capture? \rectangle}{d3}{ }{1}
+
+\problem{White to play. Capture.}{f6,g7,g5}{h7,j6,h5,g6}{How many stones did you capture? \rectangle}{h6}{ }{1}
+
+\problem{Black to play. Capture.}{f6,g7,g5,h6}{h7,j6,h5}{How many stones did you capture? \rectangle}{ }{g6}{1}
+
+\columnbreak
+
+\problem{Black to play. Capture.}{d9,c8,b9}{e9,d8}{How many stones did you capture? \rectangle}{ }{c9}{1}
+
+\problem{White to play. Capture.}{c8,b9}{e9,d8,c9}{How many stones did you capture? \rectangle}{d9}{ }{1}
+
+\problem{White to play. Capture.}{j5,h4}{j4,h3,j2}{How many stones did you capture? \rectangle}{j3}{ }{1}
+
+\problem{Black to play. Capture.}{j5,h4,j3}{h3,j2}{How many stones did you capture? \rectangle}{ }{j4}{1}
+
+\columnbreak
+
+\problem{Black to play. Capture.}{j1,h2,j3}{h1}{How many stones did you capture? \rectangle}{ }{j2}{1}
+
+\problem{White to play. Capture.}{h2,j3}{h1,j2}{How many stones did you capture? \rectangle}{j1}{ }{1}
+
+\problem{White to play. Capture.}{b9}{a9,b8,a7}{How many stones did you capture? \rectangle}{a8}{ }{1}
+
+\problem{Black to play. Capture.}{b9,a8}{b8,a7}{How many stones did you capture? \rectangle}{ }{a9}{1}
+
+\columnbreak
+
+% Big group of stones, diagonal not needed.
+
+\problem{Black to play. Capture.}{c1,d1,e1,f1,g1,d2,e2,f2,e3}{b1,c2,d3,f3,g2,h1}{How many stones did you capture? \rectangle}{ }{e4}{9}
+
+% Playing in the inside liberty.
+
+\problem{White to play. Capture.}{b1,c2,d3,f3,g2,h1,e4}{c1,d1,e1,f1,g1,d2,f2,e3}{How many stones did you capture? \rectangle}{e2}{ }{8}
+
+% Connecting to the outside.
+
+\problem{Black to play. Defend.}{b1,c2,d3,f3,g2,h1}{c1,d1,e1,f1,g1,d2,e2,f2,e3,e5}{How many stones did you save? \rectangle}{ }{e4}{9}
+
+% Defending by capturing a stone, cannot simply extend from the atari.
+
+\problem{White to play. Defend.}{c1,d1,e1,f1,g1,d2,f2,e3,c3}{b1,c2,d3,f3,g2,h1,e4,d4}{How many stones did you save? \rectangle}{b2}{ }{8}
+
+\columnbreak
+
+% Find an atari when there are several stones in the board.
+
+\problem{Black to play. Capture.}{c3,c7,e5,c5,d4,b6,b7}{g6,g3,e7,d6,d5,c6,b5}{How many stones did you capture? \rectangle}{ }{c4}{1}
+
+\problem{White to play. Capture.}{c7,c3,g5,f4,e4,f3,e2}{e5,g3,g7,f6,e3,d4,f2,g2}{How many stones did you capture? \rectangle}{d3}{ }{1}
+
+% Introduction to 2 eyes. One group can be captured, but the other one cannot.
+
+\problem{Black to play. Capture.}{a2,b2,c2,d2,d1,b1,f8,g8,h8,j8,f9,g9,h9}{a3,b3,c3,d3,e2,e1,e8,e9,f7,g7,h7,j7}{How many stones did you capture? \rectangle}{ }{j9}{7}
+
+\problem{White to play. Capture.}{a4,b4,c4,d3,d2,d1,f9,f8,f7,g6,h6,j6}{a2,b1,b3,c2,a3,c3,c1,g9,h9,j9,g8,j8,g7,h7,j7}{How many stones did you capture? \rectangle}{h8}{ }{8}
+
+\columnbreak
+
+% A gentle introduction to counting. Although here we are not considering territory, but just which group has more stones to be captured.
+
+\problem{Black to play. Capture biggest group.}{c3,c4,c5,g1,g2,g3,g4}{b3,b4,b5,c2,c6,d3,d4,f1,f2,f3,f4,h1,h2,h3,h4}{How many stones did you capture? \rectangle}{ }{g5}{4}
+
+
+\problem{White to play. Capture biggest group.}{b1,a2,a3,a4,b5,c5,c1,e2,e3,e4,d1,d5,j1,h2,h3,h4,h5,h6,h7,h8}{b2,b3,b4,c4,c2,d2,d3,d4,j2,j3,j4,j5,j6,j7,j8}{How many stones did you capture? \rectangle}{c3}{ }{8}
+
+% Also counting, but find the best group to defend. These also practice the notion of having two eyes.
+
+\problem{Black to play. Defend biggest group.}{a3,a4,a5,b6,c6,d6,e6,f4,f3,b2,c2,d2,e2,c4,h1,h2,h3,h4,h6,h7,h8,h9,g8,f8,e8,d8,d9,f9}{b3,b4,b5,c3,c5,d3,d5,e3,e4,e5,g5,j1,j2,j3,j4,j5,j6,j7,j8,j9,g6,f7,e7,d7,c7,b7,a7,b9,a8,c8}{How many stones did you save? \rectangle}{ }{f5}{10}
+
+
+\problem{White to play. Defend biggest group.}{a8,b8,c8,d8,d9,b9,f8,a2,b2,b1,d2,f5,f6}{a7,b7,c7,d7,e9,a3,b3,c1,e5,e6,f4,g5,g6}{How many stones did you save? \rectangle}{c2}{ }{4}
+
+\columnbreak
+
+% Counting again, in the attack point of view. However, some groups have two eyes and cannot be captured.
+
+% In a real game some groups are already dead and do not need to be explicitly captured. The point for now is to practice the notion that these groups can be removed, and to count.
+
+\problem{Black to play. Capture biggest group.}{a3,b3,b4,b5,b6,b7,a7,a5,h9,h8,h7,j7,a1,b1,h1,h2,h3,j1,j3}{c2,a2,b2,c3,c4,c5,c6,c7,b8,a8,g9,g8,g7,h6,j6,j8,g1,g2,g3,g4,h4,j4}{How many stones did you capture? \rectangle}{ }{j2}{5}
+
+\problem{White to play. Capture biggest group.}{a4,b4,c4,d3,d2,d1,d4,f1,f2,f3,f4,a8,b8,c8,h7,d6}{a2,b1,b3,c2,a3,c3,c1,e1,e2,e3,e4,g1,g2,g3,g4,a9,b9,c9,e9,g7,h6,h8}{How many stones did you capture? \rectangle}{e5}{ }{4}
+
+\problem{Black to play. Capture.}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9}{a1,a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{How many stones did you capture? \rectangle}{ }{a2}{4}
+
+\problem{Black to play. Capture.}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9,a2}{a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{How many stones did you capture? \rectangle}{ }{a1}{5}
+
+\columnbreak
+
+\problem{White to play. Capture.}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,b9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9}{How many stones did you capture? \rectangle}{a9}{ }{4}
+
+\problem{White to play. Capture.}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9,a9}{How many stones did you capture? \rectangle}{b9}{ }{5}
+
+\problem{Black to play. Defend your group.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{How many stones did you defend? \rectangle}{ }{j8}{5}
+
+\problem{White to play. Kill 3 groups.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{How many stones will be captured? \rectangle}{j8}{ }{12}
+
+\columnbreak
+
+\problem{Black to play. Kill 1 group.}{a2,a3,b3,c2,c3,c1,h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{How many stones will be captured? \rectangle}{ }{b2}{6}
+
+\problem{White to play. Defend your group.}{a2,a3,b3,c2,c3,c1,h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{How many stones did you save?}{b2}{ }{6}
+
+\problem{White to play. Kill 2 groups.}{c1,c2,c3,d3,e3,f4,g3,h3,j1,j2,j3,g4,f5,f6,f7,g8,h9,j9,g7,g9,f8,a5,b5,c5,d6,d7,d8,d9,c4}{d1,d2,e2,f2,f3,g2,h2,h1,g5,h5,h4,j4,g6,g7,h7,h8,j8,j6,b9,c9,c8,c7,a6,b6,c6,a8,a4,b4,b3,b2,b1,a1}{How many stones will be captured? \rectangle}{f1}{ }{14}
+
+\problem{Black to play. Defend 1 group.}{c1,c2,c3,d3,e3,f4,g3,h3,j1,j2,j3,g4,f5,f6,f7,g8,h9,j9,g7,g9,f8,a5,b5,c5,d6,d7,d8,d9,c4}{d1,d2,e2,f2,f3,g2,h2,h1,g5,h5,h4,j4,g6,g7,h7,h8,j8,b9,c9,c8,c7,a6,b6,c6,a8,a4,b4,b3,b2,b1,a1,f1}{How many stones did you save? \rectangle}{ }{j6}{9}
+
+\columnbreak
+
+In the following exercises, there are multiple different ways to organise the calculation, with the same final result. We only show examples.
+
+\bigskip
+
+Count Territory
+
+\bigskip
+
+  \cleargoban
+%  \largegoban
+  \gobansize{9}
+  \black{e5,e3,e7,c5,b5,e2,g5,e8,h5,j5,f5,e1,e4,f9,e9,j6,g6,g4,a4,a5,c4,d3,f3,e6}
+  \white{g3,g7,c3,b4,d2,b2,f8,h6,h8,h4,j3,f2,h2,f1,g9,f7,j7,h7,j4,a3,d1,b3,c1,f6}
+  \showgoban[a1,i9]
+
+  White has \ul{$4$} $+$ \ul{$4$} $+$ \ul{$6$} $=$ \ul{$14$} points.
+  
+  Black has \ul{$4$} $\times$ \ul{$4$} $+$ \ul{$3$} $=$ \ul{$19$} points.
+  
+    \ul{Black} wins.
+    
+\bigskip
+    
+  Count Territory
+
+\bigskip
+  
+  %\bigskip
+
+  \cleargoban
+
+  \gobansize{9}
+
+  \black{e5,f7,f3,d2,g6,f6,h5,e8,e9,j6,j7,j5,d3,e4,e7,d9,c1,d1,d4,d6,d5}
+  \white{c3,c7,c5,g7,f8,h6,h8,g9,f9,h7,j8,c2,d4,d7,d8,c9,b1,b2,c4,c6}
+  \showgoban[a1,i9]
+
+  White has \ul{$7$} $\times$ \ul{$2$} $+$ \ul{$3$} $+$  \ul{$3$} $=$  \ul{$20$} points.
+
+  Black has \ul{$4$} $\times$ \ul{$3$} $+$ \ul{$9$} $=$ \ul{$21$} points.
+
+  \ul{Or}
+
+  Black has \ul{$5$} $\times$ \ul{$2$} $+$ \ul{$11$} $=$ \ul{$21$} points.
+    
+     \ul{Black} wins.
+
+\columnbreak
+     
+     \bigskip
+     
+     Count Score
+
+     \bigskip
+     
+\cleargoban
+\gobansize{9}
+\black{e5,f3,c7,d7,e8,e6,b6,c8,c5,d2,b4,a3,a4,g5,h4,e3,d5,h3,j2,h2,f6,b9,b8,f4,e1,d3}
+\white{d6,g7,c6,e7,f8,f7,d8,e9,c3,c2,b3,a2,b1,h5,h6,d4,j4,j3,j5,g6,c9,d9,e4,d1,c1,c4}
+\clear{e8} % black
+\clear{c6,d6} % white
+\showgoban[a1,i9]
+
+ \begin{tikzpicture}[remember picture, overlay]
+    \draw (5.0,1) node[font=\tiny] {Black captures: \whitestone \whitestone};
+    \draw (5.0,3.3) node[font=\tiny] {White captures: \blackstone};
+ \end{tikzpicture}
+
+ White has \ul{$13$} $-$ \ul{$2$} $+$ \ul{$6.5$} $=$ \ul{$17.5$} points.
+
+ Black has \ul{$19$} $-$ \ul{$1$} $=$ \ul{$18$} points.
+
+ \ul{Black} wins.
+ 
+ \bigskip
+ 
+ Count Score
+
+\bigskip
+ 
+\cleargoban
+\gobansize{9}
+\black{f6,c7,c3,c4,d5,e6,f2,e3,d2,c2,f7,e8,d9,d8,c1,d6}
+\white{d4,g3,g7,g6,f5,e4,e2,d3,f3,e1,f8,g8,e9,f9,d1,e5}
+\clear{e3} %black
+\showgoban[a1,i9]
+
+ \begin{tikzpicture}[remember picture, overlay]
+    \draw (4.8,1) node[font=\tiny] {Black captures:};
+    \draw (5.0,3.33) node[font=\tiny] {White captures: \blackstone};
+ \end{tikzpicture}
+
+White has \ul{$27$} $-$ \ul{$0$} $+$ \ul{$6.5$} $=$ \ul{$33.5$} points.
+
+Black has \ul{$24$} $-$ \ul{$2$} $=$ \ul{$22$} points.
+
+\ul{White} wins.
+
+\end{multicols}
+\end{document}
