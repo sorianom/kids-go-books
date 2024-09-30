@@ -17,6 +17,8 @@ Go Board image in the cover is a screenshot of the [``Sabaki'' application](http
 
 This book was done in LaTeX, using several packages, including *Igo* for the Go diagrams, and *TikZ* for the page layout.
 
+Thanks to Ai Guan and to Björn Eurenius for kindly checking the draft.
+
 ## Distribution
 
 This book is freely available under the Creative Commons BY-NC\_SA 4.0 license. Hence, feel free to distribute it to friends and family.
