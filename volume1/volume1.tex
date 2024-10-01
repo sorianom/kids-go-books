@@ -471,8 +471,7 @@ Lancaster Go Club
 \end{center}
 
 \begin{enumerate}
-\item Take turns with a friend.\\
-  One is black, the other white.
+\item Take turns with a friend. One is black, the other white. Black plays first.
 \item You can draw only one stone in your turn.  
 \item First one to capture wins.
 \item Feel free to draw funny faces.
@@ -1068,8 +1067,7 @@ The Stone in the Middle Problem
 %%   \draw (3.5,4.4 + 7*0.775) node[font=\small] {9};
 %% \end{tikzpicture}  
 
-  Subtract Captured Stones\\
-  Add Komi
+  Subtract Captured Stones, Add Komi
 
   \vspace{0.5cm}
   
@@ -1128,7 +1126,20 @@ The Stone in the Middle Problem
 
   \begin{tikzpicture}[overlay, remember picture]
     \draw (-5-0.2,5+2) node {\includegraphics[width=4cm]{imgs/penguin32.png}};
-    \draw (-6.5,7.5+3) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+2)},align=center] {Booo!\\Pay attention!\\Boooooo!};
+    %\draw (-6.5,7.5+3) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+2)},align=center] {Booo!\\Pay attention!\\Boooooo!};
+    \draw (-6.5,7.5+3.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+2)},align=center,inner sep=0pt] {Booo!\\Black plays first,\\not fair!!!\\White needs komi!\\Boooooo!};
+    
+    \draw (-8,-2) node {\includegraphics[width=2cm]{imgs/penguin15.png}};
+    \draw (-7,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-7.5,-1.5)},align=center,inner sep=1]{Shouldn't Komi\\be 7.5!?};
+    
+    \draw (-3,-2) node {\includegraphics[width=2cm]{imgs/penguin4.png}};
+    \draw (-2,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-2.5,-1.5)},align=center]{NO!!! 6.5!!!};
+    
+    \draw (1,-2) node {\includegraphics[width=2cm]{imgs/penguin36.png}};
+    \draw (3,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(1.5,-1.5)},align=center]{I think 7.5...};
+
+    \draw (4.5,-3) node {\includegraphics[width=4cm]{imgs/penguin32.png}};
+    \draw (8,1) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.5,-1.5)},align=center,inner sep=1]{Boo... Stop\\fighting! There are\\different rules!\\Booo...};   
   \end{tikzpicture}
 
   
@@ -1155,15 +1166,16 @@ The Stone in the Middle Problem
 %%   \draw (3.5,4.4 + 7*0.775) node[font=\small] {9};
 %% \end{tikzpicture}  
 
+
+\vspace{4cm}
+  
   \noindent\rule{\textwidth}{2pt}
 
-  What is $6.5$?
+  {\huge What is $6.5$? $6.5$ is more than $6$, but less than $7$.}
 
-  $6.5$ is more than $6$, but less than $7$.
-
-  \bigskip
+  \smallskip
   
-  \begin{tikzpicture}
+  \hspace{-2.5cm}\begin{tikzpicture}
     \foreach \x in {0,1.5,3,4.5,6,7.5}
     \draw[fill=red] (\x,0) circle[radius=0.5cm];
     \draw (11.5,0) node {6 Balls};
@@ -1182,9 +1194,11 @@ The Stone in the Middle Problem
     \draw (11.5,-3.0) node {7 Balls};
   \end{tikzpicture}
 
+\vspace{-2cm}
+  
   \begin{tikzpicture}[overlay, remember picture]
-    \draw (5+1.5,5-5.5) node {\includegraphics[width=3cm]{imgs/penguin7.png}};
-    \draw (6.5+1.5,7.5-5.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.4+1.5,6-5.5)},align=center] {OH!!!};
+    \draw (7.5,0) node {\includegraphics[width=3cm]{imgs/penguin7.png}};
+    \draw (8.5,2.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(8.0,0.5)},align=center] {OH!!!};
   \end{tikzpicture}
   
 % TODO: Add 2 exercises with komi and captures.
@@ -1295,7 +1309,7 @@ It is possible to find basic Go problems on-line. However, usually many parents 
   \textbf{Figure: A Capture Go game in a laminated paper that evolved into a drawing.}
 \end{wrapfigure}
 
-You will find in the middle of the book a ``Capture Go'' board. Capture Go is a great introduction to Go, and it can be entirely played by drawing stones. I would recommend printing and laminating a 9x9 Go Board with white background, and playing Capture Go by drawing stones over it using white board markers. The stones can be erased afterwards with a wipe, allowing many games to be played by drawing. In that way kids can draw funny faces in the stones, balloons with dialogues, etc, allowing them to play Go and express their creativity and imagination at the same time. After the game is over, most often the board also evolves into a full drawing. That will make it really fun for them! You can find a plain 9x9 Go board to be printed at \url{http://micans.org/goboards/}
+You will find in the middle of the book a ``Capture Go'' board. Capture Go is a great introduction to Go, and it can be entirely played by drawing stones. I would recommend printing and laminating a $9 \times 9$ Go Board with white background, and playing Capture Go by drawing stones over it using white board markers. The stones can be erased afterwards with a wipe, allowing many games to be played by drawing. In that way kids can draw funny faces in the stones, balloons with dialogues, etc, allowing them to play Go and express their creativity and imagination at the same time. After the game is over, most often the board also evolves into a full drawing. That will make it really fun for them! You can find a plain $9 \times 9$ Go board to be printed at \url{http://micans.org/goboards/}.
 
 \section*{Credits}
 Most images come from Open Clipart (\url{https://openclipart.org}), and are Public Domain:
@@ -1316,11 +1330,13 @@ Go Board image in the cover is a screenshot of the ``Sabaki'' application \url{h
 
 This book was done in \LaTeX, using several packages, including \emph{Igo} for the Go diagrams, and \emph{TikZ} for the page layout.
 
-Thanks to Ai Guan and to Björn Eurenius for kindly checking the draft.
+Thanks to Ai Guan, Björn Eurenius, and Florian Pein for kindly checking the draft.
 
 \section*{Distribution}
 
 This book is freely available under the Creative Commons BY-NC\_SA 4.0 license. Hence, feel free to distribute it to friends and family.
+
+This book can be downloaded from my website, at \url{www.leandromarcolino.com.br}. The source code is available on GitHub, at \url{https://github.com/sorianom/kids-go-books}.
 
 If you like this book and would like to show appreciation, you can buy me a coffee at \url{https://buymeacoffee.com/leandromarcolino}
 
