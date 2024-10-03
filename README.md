@@ -1,5 +1,8 @@
 # My First Book of Go Exercises
 
+* [Download Book](https://github.com/sorianom/kids-go-books/releases/download/v1.0-eng/volume1.pdf)
+* [Download Solutions Sheet](https://github.com/sorianom/kids-go-books/releases/download/v1.0-eng/volume1-solutions.pdf)
+
 This book has a series of exercises to learn fundamental concepts of the Go game. It starts with basic captures across the board, but it also gives a first intuition towards important concepts such as ladders, nets, eyes, kos, and counting. The exercises should be straight-forward if you have Go knowledge, but a solution sheet is provided as a separate document.
 
 It is possible to find basic Go problems on-line. However, usually many parents want to limit the time kids spend in front of a screen. Hence, my intention with this book was to give kids an opportunity to practice Go (and Math) in a more classical ``paper-and-pencil'' setting. Therefore, the original intention is for the book to be printed, to allow the kids to draw in the pages. However, of course, playing it with a pdf editor (e.g., in a tablet) is also possible.
