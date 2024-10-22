@@ -2,6 +2,7 @@
 
 * [Download Book](https://github.com/sorianom/kids-go-books/releases/download/v1.0-eng/volume1.pdf)
 * [Download Solutions Sheet](https://github.com/sorianom/kids-go-books/releases/download/v1.0-eng/volume1-solutions.pdf)
+* Printed Version on Amazon: [UK](https://www.amazon.co.uk/dp/B0DKJRQ25H), [US](https://www.amazon.com/dp/B0DKJRQ25H), [DE](https://www.amazon.de/dp/B0DKJRQ25H), [FR](https://www.amazon.fr/dp/B0DKJRQ25H), [ES](https://www.amazon.es/dp/B0DKJRQ25H), [IT](https://www.amazon.it/dp/B0DKJRQ25H), [NL](https://www.amazon.nl/dp/B0DKJRQ25H), [PL](https://www.amazon.pl/dp/B0DKJRQ25H), [SE](https://www.amazon.se/dp/B0DKJRQ25H), [JP](https://www.amazon.co.jp/dp/B0DKJRQ25H), [CA](https://www.amazon.ca/dp/B0DKJRQ25H), [AU](https://www.amazon.com.au/dp/B0DKJRQ25H)
 
 This book has a series of exercises to learn fundamental concepts of the Go game. It starts with basic captures across the board, but it also gives a first intuition towards important concepts such as ladders, nets, eyes, kos, and counting. The exercises should be straight-forward if you have Go knowledge, but a solution sheet is provided as a separate document.
 
