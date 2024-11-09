@@ -32,3 +32,7 @@ If you like this book and would like to show appreciation, you can buy me a coff
 <div style="text-align: center;">
 <a href=https://buymeacoffee.com/leandromarcolino><img src="volume1/imgs/bmc-button.png" width="200"></a>
 </div>
+
+## Contribution
+
+If you would like to help the project, I am looking for volunteers to help translate the book to other languages. If you are interested, feel free to contact me by e-mail at l.marcolino AT lancaster.ac.uk.
