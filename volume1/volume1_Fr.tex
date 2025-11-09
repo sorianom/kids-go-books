@@ -99,7 +99,7 @@
   
 \draw (0,-12) node  {\includegraphics[width=1.5\columnwidth]{imgs/penguins.png}};
 
-\draw (0,-1) node[align=center,draw,thick,rounded corners,fill=gray,opacity=0.6,inner sep=0.75cm] {\fontfamily{qcr}\selectfont\fontsize{55}{50}\selectfont \contour{orange}{Mon premier}\\\fontfamily{qcr}\selectfont\fontsize{55}{50}\selectfont \contour{orange}{manuel de Go}};
+\draw (0,-1) node[align=center,draw,thick,rounded corners,fill=gray,opacity=0.6,inner sep=0.75cm] {\fontfamily{qcr}\selectfont\fontsize{55}{50}\selectfont \contour{orange}{Mon Premier}\\\vspace{-0.5cm}\\\fontfamily{qcr}\selectfont\fontsize{55}{50}\selectfont \contour{orange}{Manuel de Go}};
 
 \draw (0,-25) node[align=center,draw,thick,rounded corners,fill=gray,opacity=0.6,inner sep=0.5cm,text=orange, text opacity=1]{\fontfamily{qcr}\selectfont\fontsize{30}{35}\selectfont \contour{black}{LEANDRO SORIANO MARCOLINO}};
 
@@ -129,25 +129,32 @@
 \vspace{2.0cm}
 
 Leandro Soriano Marcolino\\
+\url{www.leandromarcolino.com.br}
 
-\vspace{2.0cm}
+\vspace{0.5cm}
 
-Lancaster Go Club
+{\huge Lancaster Go Club}
 
-\vspace{2.0cm}
+\vspace{1.5cm}
 
-\vspace{2.5cm}
+{\Large \emph{À mes enfants}}
 
-{\Large \emph{Traduction de Marc Levivier, Reims no dan, Club de Go de Reims}}
+\vspace{1.5cm}
 
-\vspace{2.5cm}
+{\Large Traduction de Marc Levivier, Reims no dan, Club de Go de Reims}
+
+\vspace{3.0cm}
+
+\href{https://buymeacoffee.com/leandromarcolino}{\includegraphics[width=5.0cm]{imgs/bmc-button.png}}\\
+\vspace{-0.5cm}
+  {\normalsize\url{https://buymeacoffee.com/leandromarcolino}}
 
 \includegraphics[width=0.5cm]{imgs/cc-logo.pdf}
 \includegraphics[width=0.5cm]{imgs/cc-by.pdf}
 \includegraphics[width=0.5cm]{imgs/cc-nc.pdf}
 \includegraphics[width=0.5cm]{imgs/cc-sa.pdf}\\
 {\normalsize{This work is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/}\\
-  Juillet 2025}
+  Version Française 1.0 - Novembre 2025}
 \end{center}
 
 } % Very ugly, but this closes the \Huge
@@ -155,17 +162,17 @@ Lancaster Go Club
 \newpage
 
 
-\thispagestyle{empty}
-\
+%% \thispagestyle{empty}
+%% \
 
-\begin{center}
-	\vspace{60}
-	{\Large \emph{À mes enfants}}
+%% \begin{center}
+%% 	\vspace{3cm}
+%% 	{\Large \emph{À mes enfants}}
 
-\end{center}
+%% \end{center}
 
 
-\newpage
+%% \newpage
 
 {\Large
 \section*{Aux parents et enseignants}
@@ -174,27 +181,32 @@ Ce livre propose une série d'exercices permettant d'apprendre les concepts fond
 
 Il est possible de trouver des problèmes de base de Go en ligne. Cependant, de nombreux parents souhaitent généralement limiter le temps que leurs enfants passent devant un écran. Mon intention avec ce livre était donc de donner aux enfants l'occasion de s'exercer au Go (et aux mathématiques) dans un cadre plus classique (avec des feuilles et des crayons). L'intention initiale était donc d'imprimer le livre afin de permettre aux enfants de dessiner dans les pages. Cependant, il est bien sûr également possible d'y jouer à l'aide d'un éditeur de pdf (par exemple, sur une tablette).
 
+\begin{wrapfigure}{r}{0.45\columnwidth}
+  \includegraphics[width=0.43\columnwidth]{imgs/captureGo.jpg}\\
+  \textbf{Une partie de Atari Go devenue un dessin.}
+\end{wrapfigure}
+
 Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excellente introduction au jeu de Go, et il peut être entièrement joué en dessinant des pierres. Je recommande d'imprimer et de plastifier un plateau de Go 9 × 9 avec un fond blanc, puis de jouer à Atari Go en dessinant des pierres dessus à l'aide de marqueurs pour tableau blanc. Les pierres peuvent être effacées ensuite à l'aide d'un chiffon, ce qui permet de jouer à plusieurs parties en dessinant. De cette façon, les enfants peuvent dessiner des visages amusants sur les pierres, des ballons avec des dialogues, etc., ce qui leur permet de jouer au Go tout en exprimant leur créativité et leur imagination. Une fois la partie terminée, le plateau se transforme souvent en un dessin complet. Cela rendra le jeu vraiment amusant pour eux ! Vous pouvez trouver un goban Go 9 × 9 à imprimer à l'adresse suivante : \url{http://micans.org/goboards/}.
 
 }
 
 
-\begin{center}
-\includegraphics[width=0.95\columnwidth]{imgs/captureGo.jpg}\\
-\textbf{Une partie de Atari Go devenue un dessin.}
+%% \begin{center}
+%% \includegraphics[width=0.95\columnwidth]{imgs/captureGo.jpg}\\
+%% \textbf{Une partie de Atari Go devenue un dessin.}
 
 	
-\end{center}
+%% \end{center}
 
 
 
 
+%\newpage
+%\thispagestyle{empty}
+%\
 \newpage
-\thispagestyle{empty}
-\
-\newpage
 
-{\huge
+{\Huge
 	
 \begin{center}
 	
@@ -244,7 +256,7 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 
 \problem{A blanc de jouer: capture!}{f2,g3,e3}{f3}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin2.png}{Joli!}
 
-\problem{A noir de jouer: capture!}{c7}{c6,b7,c8}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin3.png}{joli!}
+\problem{A noir de jouer: capture!}{c7}{c6,b7,c8}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin3.png}{Joli!}
 
 \noindent\rule{\textwidth}{2pt}
 
@@ -262,7 +274,7 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{A blanc de jouer: capture!}{b4,a5}{a4}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin8.png}{Vas-y!}
+\problem{A blanc de jouer: capture!}{b4,a5}{a4}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin8.png}{Vas-y!\\Vas-y!}
 
 % Atari in the corners, capture
 
@@ -272,11 +284,11 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 
 \problem{A blanc de jouer: capture!}{h9}{j9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin10.png}{Wow, dans\\le coin!}
 
-\problem{A noir de jouer: capture!}{a9}{b9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin11.png}{Attention !}
+\problem{A noir de jouer: capture!}{a9}{b9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin11.png}{Attention!}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{A blanc de jouer: capture!}{j2}{j1}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin12.png}{Capture !}
+\problem{A blanc de jouer: capture!}{j2}{j1}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin12.png}{Capture!}
 
 % Simple atari, defend.
 
@@ -318,7 +330,7 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{A blanc de jouer: d\'{e}fends!}{j9,h8}{j8}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{1}{imgs/penguin24.png}{D\'{e}fends!}
+\problem{A blanc de jouer: d\'{e}fends!}{j9,h8}{j8}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{1}{imgs/penguin24.png}{D\'{e}fends!\\D\'{e}fends!}
 
 % Atari, capture multiple stones.
 
@@ -455,11 +467,11 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 
 % Also counting, but find the best group to defend. These also practice the notion of having two eyes.
 
-\problem{Noir défend le plus grand groupe}{a3,a4,a5,b6,c6,d6,e6,f4,f3,b2,c2,d2,e2,c4,h1,h2,h3,h4,h6,h7,h8,h9,g8,f8,e8,d8,d9,f9,a6}{b3,b4,b5,c3,c5,d3,d5,e3,e4,e5,g5,j1,j2,j3,j4,j5,j6,j7,j8,j9,g6,f7,e7,d7,c7,b7,a7,b9,a8,c8}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{0}{imgs/penguin9.png}{Lequel est le\\plus grand?}
+\problem{Noir défend le plus grand groupe.}{a3,a4,a5,b6,c6,d6,e6,f4,f3,b2,c2,d2,e2,c4,h1,h2,h3,h4,h6,h7,h8,h9,g8,f8,e8,d8,d9,f9,a6}{b3,b4,b5,c3,c5,d3,d5,e3,e4,e5,g5,j1,j2,j3,j4,j5,j6,j7,j8,j9,g6,f7,e7,d7,c7,b7,a7,b9,a8,c8}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{0}{imgs/penguin9.png}{Lequel est le\\plus grand?}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{Blanc défend le plus grand groupe.}{a8,b8,c8,d8,d9,b9,f8,a2,b2,b1,d2,f5,f6}{a7,b7,c7,d7,e9,a3,b3,c1,e5,e6,f4,g5,g6}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{1}{imgs/penguin10.png}{Sauve-le!}
+\problem{Blanc défend le plus grand groupe.}{a8,b8,c8,d8,d9,b9,f8,a2,b2,b1,d2,f5,f6}{a7,b7,c7,d7,e9,a3,b3,c1,e5,e6,f4,g5,g6}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{1}{imgs/penguin10.png}{Sauve-le!\\Sauve-le!}
 
 % Counting encore, in the attack point of view. However, some groups have two eyes and cannot be captured.
 
@@ -473,7 +485,7 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 
 % Some exercises where some groups have two eyes and cannot be captured.
 
-\problem{A noir de jouer: capture!}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9}{a1,a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin13.png}{Tellement de groupes!}
+\problem{A noir de jouer: capture!}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9}{a1,a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin13.png}{Tellement\\de groupes!}
 
 \noindent\rule{\textwidth}{2pt}
 
@@ -482,17 +494,17 @@ Vous trouverez à la fin du livre un plateau de Atari Go. Atari Go est une excel
 \problem{A noir de jouer: capture!}{b1,b2,b3,a3,h9,h8,h7,h6,j6,j8,h1,j2,h3,g2,g1,g3,j3,a8,b8,c8,d8,e8,e9,c9,a2}{a4,b4,c1,c2,c3,g9,g8,g7,g6,h5,j5,f1,f2,f3,g4,h4,j4,f4,a7,b7,c7,d7,e7,f8,f9,b9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin13.png}{Blanc a capturé\\une pierre!}
 
 
-\problem{A blanc de jouer: capture!}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,b9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin14.png}{Hmm, Où jouer?}
+\problem{A blanc de jouer: capture!}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,b9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{0}{imgs/penguin14.png}{Hmm, où jouer?}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{Blanc capture}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9,a9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin14.png}{Noir a capturé\\une pierre!}
+\problem{Blanc capture.}{b3,b4,b5,c6,d6,e6,f6,g6,h5,h4,h4,c2,d2,e2,f2,g2,h3,a7,b7,c7,d8,d9,g9,d7,e7,f7,g7,h7,j7}{c3,c4,c5,d3,e3,f3,d5,e5,f5,g5,g4,g3,e4,a8,b8,c8,c9,e9,e8,f8,g8,h8,j8,h9,a9}{Combien de pierres as-tu captur\'{e}e(s)? \rectangle}{1}{imgs/penguin14.png}{Noir a capturé\\une pierre!}
 
 \problem{Noir défends son groupe.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{Combien de pierres as-tu défendues? \rectangle}{1}{imgs/penguin15.png}{Rends ton groupe\\invincible!}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{Blanc tue trois groupes.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{Combien de pierres seront capturées? \rectangle}{0}{imgs/penguin15.png}{Oh! Il y a un groupe\\qui résiste !}
+\problem{Blanc tue trois groupes.}{g9,g8,g7,g6,g5,h5,j5,a7,b7,c8,c9,a3,b3,c3,d3,d2,d1,e3,f3,g3,h3,j3}{h9,h8,h7,h6,j6,a8,b8,b9,a2,b2,c2,c1,e1,e2,f2,g2,h2,j2}{Combien de pierres seront capturées? \rectangle}{0}{imgs/penguin15.png}{Oh! Il y a un\\groupe qui résiste !}
 
 \newpage
 La pierre au milieu...
@@ -524,17 +536,17 @@ La pierre au milieu...
 \showgoban[a1,j5]
 
 \begin{tikzpicture}[remember picture,overlay]
-	\draw (10,20) node (penguin) {\includegraphics[width=2.5cm]{imgs/penguin16.png}};
-	\draw (10+3.0,20+3) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,20+1)},align=center] {Blanc ne peut pas capturer\\la pierre du milieu!};
+	\draw (10,20) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+	\draw (10+3.0,20+3) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,20+1)},align=center] {Blanc ne peut pas capturer\\la pierre du milieu!};
 	
-	\draw (10,14) node (penguin) {\includegraphics[width=2.5cm]{imgs/penguin16.png}};
-	\draw (10+3.0,14+2.5) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,14+1)},align=center] {Si Blanc essaie...};
+	\draw (10,14) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+	\draw (10+3.0,14+2.5) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,14+1)},align=center] {Si Blanc essaie...};
 	
-	\draw (10,8) node (penguin) {\includegraphics[width=2.5cm]{imgs/penguin16.png}};
-	\draw (10+3.0,8+2.5) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,8+1)},align=center] {Noir répond...};
+	\draw (10,8) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+	\draw (10+3.0,8+2.5) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,8+1)},align=center] {Noir répond...};
 	
-	\draw (10,2) node (penguin) {\includegraphics[width=2.5cm]{imgs/penguin16.png}};
-	\draw (10+3.0,2+2.5) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,2+1)},align=center] {Et gagne tout!};
+	\draw (10,2) node (penguin) {\includegraphics[width=3.5cm]{imgs/penguin16.png}};
+	\draw (10+3.0,2+2.5) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,2+1)},align=center] {Et gagne tout!};
 \end{tikzpicture}
 \newpage
 \cleargoban
@@ -577,31 +589,31 @@ La pierre au milieu...
 \vspace{-1.0cm}
 
 \begin{tikzpicture}[overlay, remember picture]
-	\draw (10,23) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin17.png}};
-	\draw (10+4.0,23+2) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,23)},align=center] {Mais Noir peut\\tout capturer!};
+	\draw (10,23) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+	\draw (10+4.0,23+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,23)},align=center] {Mais Noir peut\\tout capturer!};
 	
-	\draw (10,18.5) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin17.png}};
-	\draw (10+4.0,18.5+2) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,18.5)},align=center] {Noir menace...};
+	\draw (10,18.5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+	\draw (10+4.0,18.5+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,18.5)},align=center] {Noir menace...};
 	
-	\draw (10,14) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin17.png}};
-	\draw (10+4.0,14+2) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,14)},align=center] {Blanc capture.};
+	\draw (10,14) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+	\draw (10+4.0,14+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,14)},align=center] {Blanc capture.};
 	
-	\draw (10,9.5) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin17.png}};
-	\draw (10+4.0,9.5+2) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,9.5)},align=center] {Noir menace\\à nouveau};
+	\draw (10,9.5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+	\draw (10+4.0,9.5+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,9.5)},align=center] {Noir menace\\à nouveau};
 	
-	\draw (10,5.0) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin17.png}};
-	\draw (10+4.0,5.0+2) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,5.0)},align=center] {Blanc capture.};
+	\draw (10,5.0) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+	\draw (10+4.0,5.0+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,5.0)},align=center] {Blanc capture.};
 	
-	\draw (10,0.5) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin17.png}};
-	\draw (10+4.0,0.5+2) node [ellipse callout,draw,fill=white,font=\large,callout absolute pointer={(10+1.0,0.5)},align=center] {Et Noir gagne tout!!!};
+	\draw (10,0.5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin17.png}};
+	\draw (10+4.0,0.5+2) node [ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(10+1.0,0.5)},align=center] {Et Noir gagne tout!!!};
 \end{tikzpicture}
 
 \newpage
-\problem{Noir tue un groupe.}{h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,a9,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{Combien de pierres as-tu capturées? \rectangle}{0}{imgs/penguin18.png}{Pierre au\\milieu!}
+\problem{Noir tue un groupe.}{h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,a9,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{Combien de pierres as-tu capturées? \rectangle}{0}{imgs/penguin16.png}{Pierre au\\milieu!}
 
 \noindent\rule{\textwidth}{2pt}
 
-\problem{A blanc de jouer. Defends ton groupe.}{a2,b1,a3,b3,c2,c3,c1,h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,a9,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{1}{imgs/penguin19.png}{Wow!}
+\problem{A blanc de jouer. Defends ton groupe.}{a2,b1,a3,b3,c2,c3,c1,h9,j8,g8,h7,g9,g7,j7,e1,e2,f2,g2,h2,j2,a5,b5,b6,b7,b8,a9,b9}{a4,b4,c4,d1,d2,d3,f9,f8,f7,g6,h6,j6,e3,f3,g3,h3,j3,c5,c6,c7,c8,c9}{Combien de pierres as-tu sauv\'{e}e(s)? \rectangle}{1}{imgs/penguin17.png}{Sauve-le!}
 
 
 \newpage
@@ -903,11 +915,11 @@ La pierre au milieu...
   \white{g3,g7,c3,b4,d2,b2,f8,h6,h8,h4,j3,f2,h2,f1,g9,f7,j7,h7,j4,a3,d1,b3,c1,f6,g1}
   \showgoban[a1,i9]
 
-  {\Large Blanc a\smallrectangle $+$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
+  {\Large Blanc a \smallrectangle $+$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
 
     \vspace{0.5cm}
     
-    Noir a\smallrectangle $\times$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.\\
+    Noir a \smallrectangle $\times$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.\\
 
     \vspace{0.5cm}
     
@@ -916,7 +928,7 @@ La pierre au milieu...
   
   \begin{tikzpicture}[overlay, remember picture]
     \draw (5,5+2) node {\includegraphics[width=3cm]{imgs/penguin10.png}};
-    \draw (6.5,7.5+2) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.4,6+2)},align=center] {Prends ton temps.};
+    \draw (6.5,7.5+2) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.4,6+2)},align=center] {Prends ton\\temps.};
   \end{tikzpicture}
   
   
@@ -959,7 +971,7 @@ La pierre au milieu...
   \white{c3,c7,c5,g7,f8,h6,h8,g9,f9,h7,j8,c2,d4,d7,d8,c9,b1,b2,c4,c6}
   \showgoban[a1,i9]
 
-  {\Large White has \smallrectangle $\times$ \smallrectangle $+$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
+  {\Large Blanc a \smallrectangle $\times$ \smallrectangle $+$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
 
     \vspace{0.5cm}
     
@@ -972,7 +984,7 @@ La pierre au milieu...
 \vspace{-0.5cm}
   \begin{tikzpicture}[overlay, remember picture]
     \draw (-5-2,5) node {\includegraphics[width=3cm]{imgs/penguin30.png}};
-    \draw (-6.5-2,7.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4-2,6)},align=center] {Pas de panique!};
+    \draw (-6.5-2,7.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4-2,6)},align=center] {Pas de\\panique!};
   \end{tikzpicture}
   
 %% \begin{tikzpicture}[remember picture, overlay,shift={(-7.1,-2.35)}]
@@ -998,7 +1010,7 @@ La pierre au milieu...
 %%   \draw (3.5,4.4 + 7*0.775) node[font=\small] {9};
 %% \end{tikzpicture}  
 \newpage
-  Soustaire les pierres capturées. Ajouter le komi
+  {\huge Soustraire les Pierres Capturées, Ajouter le Komi}
 
   \vspace{0.5cm}
   
@@ -1049,28 +1061,28 @@ La pierre au milieu...
 
   \vspace{0.25cm}
   
-  {\Large Blanc reçoit $6,5$ points de plus, c'est le komi.
+  {\Large Blanc reçoit $6{,}5$ points de plus, c'est le komi.
 
-  Blanc a donc \ul{$9$} $+$ \ul{$6,5$} $=$ \ul{$15,5$} points.
+  Blanc a donc \ul{$9$} $+$ \ul{$6{,}5$} $=$ \ul{$15{,}5$} points.
 
   \ul{Noir} gagne quand même.}
 
   \begin{tikzpicture}[overlay, remember picture]
     \draw (-5-0.2,5+2) node {\includegraphics[width=4cm]{imgs/penguin32.png}};
     %\draw (-6.5,7.5+3) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+2)},align=center] {Booo!\\Fais attention!\\Boooooo!};
-    \draw (-6.5,7.5+3.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+2)},align=center,inner sep=0pt] {Noir joue en premier\\En contrepartie,\\Blanc a le komi!};
+    \draw (-6.5,7.5+3.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+2)},align=center,inner sep=0pt] {Bouuuh! Noir joue\\en premier,\\c’est pas juste!!!\\Blanc a besoin\\de komi!\\Bouuuh!};%{Noir joue en premier.\\En contrepartie,\\Blanc a le komi!};
     
     \draw (-8,-2) node {\includegraphics[width=2cm]{imgs/penguin15.png}};
-    \draw (-7,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-7.5,-1.5)},align=center,inner sep=1]{Le komi ne vaut-il \\pas 7,5!?};
+    \draw (-7,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-7.5,-1.5)},align=center,inner sep=1]{Le komi ne vaut-il \\pas $7{,}5$!?};
     
     \draw (-3,-2) node {\includegraphics[width=2cm]{imgs/penguin4.png}};
-    \draw (-2,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-2.5,-1.5)},align=center]{NON!!! 6,5!!!};
+    \draw (-2,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-2.5,-1.5)},align=center]{NON!!! $6{,}5$!!!};
     
     \draw (1,-2) node {\includegraphics[width=2cm]{imgs/penguin36.png}};
-    \draw (3,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(1.5,-1.5)},align=center]{Je dirais 7,5...};
+    \draw (3,0) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(1.5,-1.5)},align=center]{Je dirais $7{,}5$...};
 
     \draw (4.5,-3) node {\includegraphics[width=4cm]{imgs/penguin32.png}};
-    \draw (8,1) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.5,-1.5)},align=center,inner sep=1]{En fait...\\Il existe\\différentes règles!};   
+    \draw (8,1) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(5.5,-1.5)},align=center,inner sep=1] {Bouuuh...\\Arrêtez de\\vous disputer!\\Il y a plusieurs\\règles! Bouuuh...};%{En fait...\\Il existe\\différentes règles!};   
   \end{tikzpicture}
 
   
@@ -1102,14 +1114,14 @@ La pierre au milieu...
   
   \noindent\rule{\textwidth}{2pt}
 
-  {\huge Combien vaut $6,5$? $6,5$ vaut que $6$, mais moins que $7$.}
+  {\huge Combien vaut $6{,}5$? $6{,}5$ vaut que $6$, mais moins que $7$.}
 
   \smallskip
   
   \hspace{-2.5cm}\begin{tikzpicture}
     \foreach \x in {0,1.5,3,4.5,6,7.5}
     \draw[fill=red] (\x,0) circle[radius=0.5cm];
-    \draw (11.5,0) node {6};
+    \draw (11.5,0) node {$6$ Balles};
 
     \foreach \x in {0,1.5,3,4.5,6,7.5}
     \draw[fill=red] (\x,-1.5) circle[radius=0.5cm];
@@ -1118,11 +1130,11 @@ La pierre au milieu...
       \clip (8.5,-2.0) rectangle (9.5, -1.5);
       \draw[fill=red] (9,-1.5) circle[radius=0.5cm];
     \end{scope}
-    \draw (11.5,-1.5) node {6,5};
+    \draw (11.5,-1.5) node {$6{,}5$ Balles};
 
     \foreach \x in {0,1.5,3,4.5,6,7.5,9}
     \draw[fill=red] (\x,-3.0) circle[radius=0.5cm];
-    \draw (11.5,-3.0) node {7};
+    \draw (11.5,-3.0) node {$7$ Balles};
   \end{tikzpicture}
 
 \vspace{-2cm}
@@ -1165,12 +1177,12 @@ Qui a gagné?
 }
 
 \begin{tikzpicture}[remember picture, overlay]
-	\draw (-2.8,4.9) node[font=\small] {Territoire};
-	\draw (-0.6,4.9) node[font=\small] {Prisonniers};
-	\draw (1, 4.9) node[font=\small] {Komi};
+	\draw (-2.9,5.3) node[font=\small] {Territoire};
+	\draw (-0.9,5.3) node[font=\small] {Prisonniers};
+	\draw (1, 5.3) node[font=\small] {Komi};
 	
-	\draw (-1.9,3.2) node[font=\small] {Territoire};
-	\draw (0,3.2) node[font=\small] {Prisonniers};
+	\draw (-2.0,3.5) node[font=\small] {Territoire};
+	\draw (0,3.5) node[font=\small] {Prisonniers};
 \end{tikzpicture}
 
 \begin{tikzpicture}[overlay, remember picture]
@@ -1178,9 +1190,11 @@ Qui a gagné?
 	\draw (-6.5,7.5+3) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(-5.4,6+3)},align=center] {Prends ton temps\\pour compter!};
 \end{tikzpicture}
 
-\vspace{-2.5cm}
+\vspace{-2.6cm}
 
 \noindent\rule{\textwidth}{2pt}
+
+\vspace{-0.15cm}
 
 Qui a gagné?
 
@@ -1205,10 +1219,10 @@ Qui a gagné?
 
 \vspace{-1.25cm}
 
-{
+{\vspace{-0.475cm}
 	\hspace{-5cm}{\Large Blanc a \smallrectangle $-$ \smallrectangle $+$ \smallrectangle $=$ \smallrectangle points.
 		
-		\vspace{0.5cm}
+		\vspace{0.4cm}
 		
 		\hspace{-5cm}Noir a \smallrectangle $-$ \smallrectangle $=$ \smallrectangle points.
 		
@@ -1217,12 +1231,12 @@ Qui a gagné?
 		\hspace{-5cm}\rule{60pt}{2pt} gagne.
 }}
 \begin{tikzpicture}[remember picture, overlay]
-	\draw (-4.8,4) node[font=\small] {Territoire};
-	\draw (-2.7,4) node[font=\small] {Prisonniers};
-	\draw (-1.2, 4) node[font=\small] {Komi};
+	\draw (-4.85,4.1) node[font=\small] {Territoire};
+	\draw (-2.9,4.1) node[font=\small] {Prisonniers};
+	\draw (-1.0, 4.1) node[font=\small] {Komi};
 	
-	\draw (-4,2.3) node[font=\small] {Territoire};
-	\draw (-2,2.3) node[font=\small] {Prisonniers};
+	\draw (-4.1,2.4) node[font=\small] {Territoire};
+	\draw (-2.1,2.4) node[font=\small] {Prisonniers};
 \end{tikzpicture}        
 \end{center}
 } % Very ugly, but this closes the \Huge
@@ -1238,7 +1252,7 @@ Qui a gagné?
 	\item Ce sont les noirs qui commencent.
 	\item Chacun pose une pierre lorsque vient son tour de jouer.
 	\item Le premier qui capture a gagné.
-	\item Tu peux varier les règles : capture! au moins une pierre, capture exactement une pierre, en capturer deux, etc.
+	\item Tu peux varier les règles: capture! Au moins une pierre, capture exactement une pierre, en capturer deux, etc.
 	\item Tu peux poser des pierres, ou bien dessiner. 
 	\item Si tu as envie, donne des visages amusants aux pierres.
 
@@ -1276,13 +1290,14 @@ Qui a gagné?
 
 
 \begin{tikzpicture}[overlay, remember picture]
-	\draw (13,0) node (penguin) {\includegraphics[width=2.0cm]{imgs/penguin1.png}};
-	\draw (15.25,2.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(13,0.5)},align=center,inner sep=0] {Print this page\\again to\\play more games!};
+	\draw (0,-5) node (penguin) {\includegraphics[width=3.0cm]{imgs/penguin1.png}};
+	\draw (3.0,-2.5) node[ellipse callout,draw,fill=white,font=\Large,callout absolute pointer={(0.25,-4.5)},align=center,inner sep=0] {Imprime encore\\la page suivante\\pour jouer\\plus de parties!};
 \end{tikzpicture}
 
 
 \newpage
 
+\vspace*{3cm}
 	
 	\begin{tikzpicture}
 		
@@ -1380,12 +1395,18 @@ Ce livre est disponible sous la licence Creative Commons BY-NC\_SA 4.0. Vous pou
 
 Il est disponible depuis mon site web: \url{www.leandromarcolino.com.br}. Le code source est disponible sur GitHub (\url{https://github.com/sorianom/kids-go-books}).
 
-Si vous aimez ce livre et que vous souhaitez me l'exprimer, vous pouvez m'offrir un caf\'{e} via \url{https://buymeacoffee.com/leandromarcolino}
+Si vous aimez ce livre et que vous souhaitez me l'exprimer, vous pouvez m'offrir un caf\'{e} via \url{https://buymeacoffee.com/leandromarcolino}.
 
+\bigskip
+
+\begin{center}
+  \href{https://buymeacoffee.com/leandromarcolino}{\includegraphics[width=5.0cm]{imgs/bmc-button.png}}\\
+  \url{https://buymeacoffee.com/leandromarcolino}
+\end{center}
 
 \newpage
 \thispagestyle{empty}
-
+\
 \newpage
 
 \begin{center}
